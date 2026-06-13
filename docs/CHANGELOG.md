@@ -8,6 +8,10 @@
 - Added portfolio sections for hero, projects, screenshots/gallery, skills, experience, contact, and footer.
 - Added data-driven content in `src/data/portfolioData.js`.
 - Added gallery placeholders because no existing screenshots were found.
+- Replaced gallery placeholders with the Prism SMP lore screenshot.
+- Added a round profile image in the hero from `public/profile/glitch-pfp.png`.
+- Updated Discord contact to `mr.zap`.
+- Updated server hosting skill level to Strong.
 - Added accessibility basics including semantic sections, heading order, focus states, disabled placeholder buttons, image alt support, and reduced-motion styles.
 - Added project documentation, audit notes, testing checklist, and handoff message.
 - Added `.gitignore` for dependencies, build output, logs, and generated workspace folders.

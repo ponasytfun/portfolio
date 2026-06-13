@@ -18,7 +18,8 @@ Implemented framework: Vite + React, because the project was empty and the reque
 - `src/data/portfolioData.js` - editable portfolio content
 - `src/components/` - reusable portfolio sections
 - `src/styles.css` - global design system and animations
-- `public/screenshots/` - folder for future screenshots
+- `public/screenshots/` - screenshot gallery assets
+- `public/profile/` - profile image assets
 
 ## Existing Pages / Components
 
@@ -39,7 +40,12 @@ Created components:
 
 ## Existing Assets / Screenshots
 
-No existing assets, screenshots, or public image folders were found.
+No existing assets, screenshots, or public image folders were found during the original audit.
+
+Assets added after implementation:
+
+- `public/screenshots/prism-smp-lore.png`
+- `public/profile/glitch-pfp.png`
 
 ## Existing Styling Method
 
@@ -63,8 +69,8 @@ Implemented scripts:
 - Empty project root with no app files.
 - No Git repository existed at audit time.
 - `node`, `npm`, `git`, and `gh` were not initially available on PATH.
-- No screenshots exist, so the gallery will need safe placeholder cards.
-- No personal contact links were found, so contact buttons must use honest placeholders.
+- No screenshots existed during the original audit; the gallery now uses a real Prism SMP lore screenshot.
+- No GitHub or email links were found, so those contact buttons still use honest placeholders.
 - `npm.ps1` is blocked by PowerShell execution policy, so `npm.cmd` was used for install and scripts.
 
 ## Files Planned To Create
@@ -89,6 +95,8 @@ Implemented scripts:
 - `src/components/Footer.jsx`
 - `src/styles.css`
 - `public/screenshots/.gitkeep`
+- `public/screenshots/prism-smp-lore.png`
+- `public/profile/glitch-pfp.png`
 - `docs/TESTING_CHECKLIST.md`
 - `docs/CHANGELOG.md`
 - `message.txt`

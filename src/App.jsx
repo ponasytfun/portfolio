@@ -17,7 +17,6 @@ export default function App() {
         <Projects projects={portfolioData.projects} />
         <Gallery
           gallery={portfolioData.gallery}
-          placeholders={portfolioData.galleryPlaceholders}
         />
         <Skills skillGroups={portfolioData.skillGroups} />
         <Experience items={portfolioData.experience} />

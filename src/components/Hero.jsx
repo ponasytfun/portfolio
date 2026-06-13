@@ -6,6 +6,9 @@ export default function Hero({ hero }) {
       <QuantumOrb />
       <div className="section-inner hero-inner">
         <div className="hero-copy">
+          <div className="profile-frame">
+            <img alt={hero.profileImage.alt} src={hero.profileImage.src} />
+          </div>
           <p className="eyebrow">{hero.badge}</p>
           <h1>{hero.title}</h1>
           <p className="hero-subtitle">{hero.subtitle}</p>

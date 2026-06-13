@@ -6,7 +6,7 @@ A serious developer portfolio for Glitch built with Vite and React. The site foc
 
 - Dark futuristic interface with purple, blue, and cyan accents
 - Animated CSS quantum orb with three rotating rings
-- Responsive hero, project cards, screenshot placeholders, skills, experience, contact, and footer
+- Responsive hero with round profile image, project cards, screenshot gallery, skills, experience, contact, and footer
 - Data-driven portfolio text in `src/data/portfolioData.js`
 - Reduced-motion support
 - No paid assets or copyrighted images
@@ -58,9 +58,11 @@ Edit `src/data/portfolioData.js` to update:
 - Experience items
 - Contact placeholders and links
 
-## Add Screenshots
+## Screenshots
 
 Add images to `public/screenshots/`, then add entries to the `gallery` array in `src/data/portfolioData.js`.
+
+The current gallery includes `public/screenshots/prism-smp-lore.png`.
 
 Example:
 

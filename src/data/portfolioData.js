@@ -10,6 +10,10 @@ export const portfolioData = {
   hero: {
     badge: 'Developer Portfolio',
     title: "Hi, I'm Glitch.",
+    profileImage: {
+      src: '/profile/glitch-pfp.png',
+      alt: 'Glitch profile avatar',
+    },
     subtitle:
       'I build plugins, tools, systems, and experiments that turn ideas into working projects.',
     support:
@@ -54,12 +58,12 @@ export const portfolioData = {
       links: { details: '#skills', screenshots: '#screenshots' },
     },
   ],
-  gallery: [],
-  galleryPlaceholders: [
-    'Plugin interface preview',
-    'Server system screenshot',
-    'Automation tool preview',
-    'UI experiment capture',
+  gallery: [
+    {
+      src: '/screenshots/prism-smp-lore.png',
+      alt: 'Prism SMP lore plugin interface in Minecraft',
+      caption: 'Prism SMP lore plugin UI',
+    },
   ],
   skillGroups: [
     {
@@ -102,7 +106,7 @@ export const portfolioData = {
         { name: 'IntelliJ IDEA', level: 'Comfortable' },
         { name: 'Git / GitHub', level: 'Comfortable' },
         { name: 'Maven', level: 'Comfortable' },
-        { name: 'Server hosting basics', level: 'Learning' },
+        { name: 'Server hosting', level: 'Strong' },
       ],
     },
     {
@@ -125,7 +129,7 @@ export const portfolioData = {
   ],
   contacts: [
     { label: 'GitHub', value: 'Coming soon', href: null },
-    { label: 'Discord', value: 'Available on request', href: null },
+    { label: 'Discord', value: 'mr.zap', href: null },
     { label: 'Email', value: 'Add contact email here', href: null },
     { label: 'Projects', value: 'Selected development work', href: '#projects' },
   ],

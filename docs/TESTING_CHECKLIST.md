@@ -6,9 +6,9 @@
 - Mobile layout test: Passed by browser metrics at 390px width. No horizontal overflow, project cards stacked, gallery stacked, and hero buttons wrapped to full width.
 - Nav button test: Passed by link contract. Hero buttons point to `#projects`, `#screenshots`, and `#skills`, and each target section exists.
 - Projects button test: Passed by link contract. Project detail links point to existing page sections, screenshots links point to the gallery, and missing code links are disabled.
-- Screenshots/gallery test: Passed. No images existed, so four placeholder cards render without broken image icons.
+- Screenshots/gallery test: Passed. The Prism SMP lore screenshot renders without placeholder cards.
 - Skills section test: Passed. Skill groups render with honest labels: Learning, Comfortable, Strong, and Advanced support in styles.
-- Contact links test: Passed. Missing GitHub, Discord, and email links are rendered as disabled placeholders.
+- Contact links test: Passed. Discord displays `mr.zap`; missing GitHub and email links remain disabled placeholders.
 - Reduced motion test: Passed by CSS inspection. `prefers-reduced-motion: reduce` disables long animations and hover movement.
 - Build command test: Passed. `npm.cmd run build` completed successfully.
 - Lint command test: Passed. `npm.cmd run lint` completed successfully.

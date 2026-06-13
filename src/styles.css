@@ -241,6 +241,40 @@ button {
   max-width: 760px;
 }
 
+.profile-frame {
+  position: relative;
+  width: 116px;
+  height: 116px;
+  margin-bottom: 22px;
+  padding: 4px;
+  background:
+    linear-gradient(135deg, rgba(64, 232, 255, 0.95), rgba(164, 108, 255, 0.92)),
+    rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  box-shadow:
+    0 0 32px rgba(64, 232, 255, 0.32),
+    0 0 56px rgba(164, 108, 255, 0.24);
+}
+
+.profile-frame::after {
+  position: absolute;
+  inset: -9px;
+  z-index: -1;
+  content: "";
+  border: 1px solid rgba(64, 232, 255, 0.22);
+  border-radius: 50%;
+}
+
+.profile-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid rgba(7, 9, 19, 0.8);
+  border-radius: 50%;
+}
+
 .hero-copy h1 {
   max-width: 11ch;
   margin: 0;
@@ -662,8 +696,7 @@ button {
 
 .project-card,
 .skill-card,
-.contact-card,
-.gallery-placeholder {
+.contact-card {
   position: relative;
   overflow: hidden;
   background:
@@ -676,8 +709,7 @@ button {
 
 .project-card::before,
 .skill-card::before,
-.contact-card::before,
-.gallery-placeholder::before {
+.contact-card::before {
   position: absolute;
   inset: 0;
   content: "";
@@ -688,8 +720,7 @@ button {
 
 .project-card:hover::before,
 .skill-card:hover::before,
-.contact-card:hover::before,
-.gallery-placeholder:hover::before {
+.contact-card:hover::before {
   opacity: 1;
 }
 
@@ -710,8 +741,7 @@ button {
 
 .card-topline h3,
 .skill-card h3,
-.contact-card h3,
-.gallery-placeholder h3 {
+.contact-card h3 {
   margin: 0;
   color: var(--text);
   font-size: 1.14rem;
@@ -734,8 +764,7 @@ button {
 }
 
 .project-card p,
-.contact-card p,
-.gallery-placeholder p {
+.contact-card p {
   position: relative;
   z-index: 1;
   color: var(--text-muted);
@@ -779,43 +808,12 @@ button {
 }
 
 .gallery-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.gallery-placeholder {
-  padding: 14px;
-}
-
-.placeholder-frame {
-  display: grid;
-  min-height: 150px;
-  place-items: center;
-  margin-bottom: 16px;
-  color: var(--cyan);
-  background:
-    linear-gradient(135deg, rgba(64, 232, 255, 0.1), rgba(164, 108, 255, 0.08)),
-    rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(64, 232, 255, 0.32);
-  border-radius: var(--radius);
-  font-size: 0.88rem;
-  font-weight: 850;
-  text-align: center;
-}
-
-.gallery-placeholder h3,
-.gallery-placeholder p {
-  position: relative;
-  z-index: 1;
-}
-
-.gallery-placeholder p {
-  margin-bottom: 4px;
-  font-size: 0.88rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
 .gallery-item {
   position: relative;
-  min-height: 210px;
+  min-height: 320px;
   padding: 0;
   overflow: hidden;
   color: var(--text);
@@ -829,7 +827,7 @@ button {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 210px;
+  min-height: 320px;
   object-fit: cover;
   transition: transform var(--duration) ease;
 }
@@ -1150,10 +1148,6 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .orb-shell {
     top: 18%;
     right: -8%;
@@ -1180,6 +1174,12 @@ button {
   .hero-copy h1 {
     max-width: 10ch;
     font-size: 2.85rem;
+  }
+
+  .profile-frame {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 18px;
   }
 
   .hero-subtitle {
@@ -1229,9 +1229,13 @@ button {
     display: none;
   }
 
-  .gallery-grid,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-item,
+  .gallery-item img {
+    min-height: 220px;
   }
 
   .project-card,

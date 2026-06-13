@@ -24,6 +24,8 @@ src/components/Contact.jsx
 src/components/Footer.jsx
 src/styles.css
 public/screenshots/.gitkeep
+public/screenshots/prism-smp-lore.png
+public/profile/glitch-pfp.png
 README.md
 docs/PROJECT_AUDIT.md
 docs/TESTING_CHECKLIST.md
@@ -32,6 +34,14 @@ message.txt
 
 Files edited:
 docs/PROJECT_AUDIT.md
+README.md
+docs/TESTING_CHECKLIST.md
+docs/CHANGELOG.md
+src/data/portfolioData.js
+src/App.jsx
+src/components/Hero.jsx
+src/components/Gallery.jsx
+src/styles.css
 
 Visual features added:
 Dark futuristic developer portfolio interface.
@@ -40,6 +50,8 @@ Central glowing orb with purple, blue, and cyan glow.
 Three animated orbit rings: front-facing, horizontal, and diagonal.
 Subtle particle glow field.
 Glass-style project, gallery, skill, and contact cards.
+Round profile image in the hero.
+Real screenshot gallery image for the Prism SMP lore UI.
 Responsive desktop, tablet, and mobile layouts.
 Reduced-motion support.
 Smooth scrolling and keyboard focus states.
@@ -56,8 +68,8 @@ How to lint:
 npm.cmd run lint
 
 What still needs manual editing:
-Replace placeholder contact values with real GitHub, Discord, and email details when ready.
-Add real screenshots.
+Replace placeholder GitHub and email values when ready.
+Add more real screenshots if wanted.
 Replace starter project descriptions with specific real projects when available.
 
 Where to add screenshots:
