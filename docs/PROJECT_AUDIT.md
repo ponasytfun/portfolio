@@ -13,6 +13,7 @@ Implemented framework: Vite + React, because the project was empty and the reque
 - `docs/PROJECT_AUDIT.md` - created during this audit
 - `package.json` - Vite, React, ESLint scripts and dependencies
 - `.gitignore` - ignores dependencies, build output, logs, and generated workspace folders
+- `.gitattributes` - preserved from the existing GitHub repository
 - `src/App.jsx` - main page composition
 - `src/data/portfolioData.js` - editable portfolio content
 - `src/components/` - reusable portfolio sections
@@ -70,6 +71,7 @@ Implemented scripts:
 
 - `package.json`
 - `.gitignore`
+- `.gitattributes` from the remote repository
 - `index.html`
 - `vite.config.js`
 - `src/main.jsx`
@@ -105,3 +107,6 @@ Implemented scripts:
 - Verified the dev server at `http://127.0.0.1:5174/` because port `5173` was already in use.
 - Browser DOM checks passed with no console errors and no Vite error overlay.
 - Mobile viewport metrics passed at 390px width with no horizontal overflow.
+- Local git repository was initialized and committed.
+- Remote `origin` was set to `https://github.com/ponasytfun/Jarvis.git`.
+- Push was attempted but failed because no noninteractive GitHub credential is available.
