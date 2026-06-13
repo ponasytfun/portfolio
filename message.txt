@@ -25,6 +25,8 @@ src/components/Footer.jsx
 src/styles.css
 public/screenshots/.gitkeep
 public/screenshots/prism-smp-lore.png
+public/screenshots/prism-plugin-ability-visuals-flame-ring.png
+public/screenshots/prism-plugin-ability-visuals-snowfield.png
 public/profile/glitch-pfp.png
 README.md
 docs/PROJECT_AUDIT.md
@@ -52,6 +54,7 @@ Subtle particle glow field.
 Glass-style project, gallery, skill, and contact cards.
 Round profile image in the hero.
 Real screenshot gallery image for the Prism SMP lore UI.
+Additional Prism plugin ability visual screenshots.
 Responsive desktop, tablet, and mobile layouts.
 Reduced-motion support.
 Smooth scrolling and keyboard focus states.

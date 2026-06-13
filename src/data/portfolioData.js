@@ -66,6 +66,16 @@ export const portfolioData = {
       alt: 'Prism SMP lore plugin interface in Minecraft',
       caption: 'Prism SMP lore plugin UI',
     },
+    {
+      src: assetPath('screenshots/prism-plugin-ability-visuals-flame-ring.png'),
+      alt: 'Prism plugin flame ability visual in a snowy Minecraft biome',
+      caption: 'Prism plugin ability visuals - flame ring',
+    },
+    {
+      src: assetPath('screenshots/prism-plugin-ability-visuals-snowfield.png'),
+      alt: 'Prism plugin ability visual preview in a snowy Minecraft biome',
+      caption: 'Prism plugin ability visuals - snowfield preview',
+    },
   ],
   skillGroups: [
     {
