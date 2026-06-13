@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Nav({ items }) {
+export default function Nav({ brandImage, items }) {
   const [activeItem, setActiveItem] = useState(items[0]?.href ?? '#home')
 
   useEffect(() => {
@@ -29,7 +29,9 @@ export default function Nav({ items }) {
     <header className="site-header">
       <nav className="nav-shell" aria-label="Primary navigation">
         <a className="brand" href="#home" aria-label="Glitch portfolio home">
-          <span className="brand-mark">G</span>
+          <span className="brand-mark">
+            <img alt="" src={brandImage.src} />
+          </span>
           <span>Glitch</span>
         </a>
         <div className="nav-links">

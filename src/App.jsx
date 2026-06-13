@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <>
-      <Nav items={portfolioData.navItems} />
+      <Nav brandImage={portfolioData.hero.profileImage} items={portfolioData.navItems} />
       <main>
         <Hero hero={portfolioData.hero} />
         <Projects projects={portfolioData.projects} />

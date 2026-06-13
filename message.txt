@@ -28,6 +28,7 @@ public/screenshots/prism-smp-lore.png
 public/screenshots/prism-plugin-ability-visuals-flame-ring.png
 public/screenshots/prism-plugin-ability-visuals-snowfield.png
 public/profile/glitch-pfp.png
+public/profile/glitch-pfp-round.png
 README.md
 docs/PROJECT_AUDIT.md
 docs/TESTING_CHECKLIST.md
@@ -55,6 +56,8 @@ Glass-style project, gallery, skill, and contact cards.
 Round profile image in the hero.
 Real screenshot gallery image for the Prism SMP lore UI.
 Additional Prism plugin ability visual screenshots.
+Round profile image in the top-left navigation brand.
+Round profile-image favicon.
 Responsive desktop, tablet, and mobile layouts.
 Reduced-motion support.
 Smooth scrolling and keyboard focus states.
