@@ -15,9 +15,9 @@ export const portfolioData = {
       alt: 'Glitch profile avatar',
     },
     subtitle:
-      'I build plugins, tools, systems, and experiments that turn ideas into working projects.',
+      'I build Minecraft plugins, server systems, automation tools, and UI experiments.',
     support:
-      'Focused on Java, Minecraft server development, automation, UI systems, and practical coding projects.',
+      'I have worked with server projects like Prism SMP, Unstable SMP, Vortex SMP, Primal SMP, Anchor SMP, and Reality SMP, focusing on custom gameplay features, admin tools, progression systems, and practical coding projects.',
     actions: [
       { label: 'View Projects', href: '#projects', variant: 'primary' },
       { label: 'View Screenshots', href: '#screenshots', variant: 'secondary' },
