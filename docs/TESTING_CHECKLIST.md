@@ -12,6 +12,7 @@
 - Reduced motion test: Passed by CSS inspection. `prefers-reduced-motion: reduce` disables long animations and hover movement.
 - Build command test: Passed. `npm.cmd run build` completed successfully.
 - Lint command test: Passed. `npm.cmd run lint` completed successfully.
+- GitHub Pages workflow test: Added `.github/workflows/deploy.yml`; remote deployment runs after push to `main`.
 - No broken images test: Passed. Gallery uses placeholder cards because no screenshot assets exist.
 - No console errors test: Passed. Browser dev logs returned no errors during desktop and mobile checks.
 

@@ -61,6 +61,9 @@ npm.cmd run dev
 
 The dev server used http://127.0.0.1:5174/ during verification because port 5173 was already in use.
 
+Public website URL:
+https://ponasytfun.github.io/portfolio/
+
 How to build:
 npm.cmd run build
 
@@ -88,14 +91,7 @@ Mobile layout metrics passed at 390px width.
 
 Known issues:
 The in-app browser captured one desktop clip successfully, but later screenshot capture attempts timed out in the browser automation layer.
-Publishing attempt:
-Local git repository was initialized on main.
-Local commits were created.
-Remote origin was set to https://github.com/ponasytfun/Jarvis.git.
-The remote repository only contained .gitattributes, which was preserved by merging origin/main.
-git push failed because GitHub credentials are not available noninteractively:
-fatal: could not read Username for 'https://github.com': terminal prompts disabled
-
-What is needed to finish publishing:
-Run gh auth login or provide an authenticated Git remote/token, then run:
-git push -u origin main
+Publishing:
+Remote origin is https://github.com/ponasytfun/portfolio.git.
+GitHub Pages deploy is configured through .github/workflows/deploy.yml.
+GitHub Pages source should be GitHub Actions.

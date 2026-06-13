@@ -12,6 +12,9 @@
 - Added a round profile image in the hero from `public/profile/glitch-pfp.png`.
 - Updated Discord contact to `mr.zap`.
 - Updated server hosting skill level to Strong.
+- Renamed the GitHub repository from `Jarvis` to `portfolio`.
+- Added GitHub Pages deployment workflow.
+- Set Vite base path to `/portfolio/` for GitHub Pages.
 - Added accessibility basics including semantic sections, heading order, focus states, disabled placeholder buttons, image alt support, and reduced-motion styles.
 - Added project documentation, audit notes, testing checklist, and handoff message.
 - Added `.gitignore` for dependencies, build output, logs, and generated workspace folders.

@@ -14,6 +14,7 @@ Implemented framework: Vite + React, because the project was empty and the reque
 - `package.json` - Vite, React, ESLint scripts and dependencies
 - `.gitignore` - ignores dependencies, build output, logs, and generated workspace folders
 - `.gitattributes` - preserved from the existing GitHub repository
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
 - `src/App.jsx` - main page composition
 - `src/data/portfolioData.js` - editable portfolio content
 - `src/components/` - reusable portfolio sections
@@ -78,6 +79,7 @@ Implemented scripts:
 - `package.json`
 - `.gitignore`
 - `.gitattributes` from the remote repository
+- `.github/workflows/deploy.yml`
 - `index.html`
 - `vite.config.js`
 - `src/main.jsx`
@@ -118,3 +120,7 @@ Implemented scripts:
 - Local git repository was initialized and committed.
 - Remote `origin` was set to `https://github.com/ponasytfun/Jarvis.git`.
 - Push was attempted but failed because no noninteractive GitHub credential is available.
+- GitHub CLI was later authenticated.
+- Repository was renamed from `ponasytfun/Jarvis` to `ponasytfun/portfolio`.
+- Remote `origin` now points to `https://github.com/ponasytfun/portfolio.git`.
+- Vite base path is configured as `/portfolio/`.

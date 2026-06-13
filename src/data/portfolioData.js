@@ -1,3 +1,5 @@
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`
+
 export const portfolioData = {
   navItems: [
     { label: 'Home', href: '#home' },
@@ -11,7 +13,7 @@ export const portfolioData = {
     badge: 'Developer Portfolio',
     title: "Hi, I'm Glitch.",
     profileImage: {
-      src: '/profile/glitch-pfp.png',
+      src: assetPath('profile/glitch-pfp.png'),
       alt: 'Glitch profile avatar',
     },
     subtitle:
@@ -60,7 +62,7 @@ export const portfolioData = {
   ],
   gallery: [
     {
-      src: '/screenshots/prism-smp-lore.png',
+      src: assetPath('screenshots/prism-smp-lore.png'),
       alt: 'Prism SMP lore plugin interface in Minecraft',
       caption: 'Prism SMP lore plugin UI',
     },

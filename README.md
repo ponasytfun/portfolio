@@ -2,6 +2,12 @@
 
 A serious developer portfolio for Glitch built with Vite and React. The site focuses on plugins, tools, systems, automation, UI experiments, and practical coding projects.
 
+Published site:
+
+```text
+https://ponasytfun.github.io/portfolio/
+```
+
 ## Features
 
 - Dark futuristic interface with purple, blue, and cyan accents
@@ -10,6 +16,7 @@ A serious developer portfolio for Glitch built with Vite and React. The site foc
 - Data-driven portfolio text in `src/data/portfolioData.js`
 - Reduced-motion support
 - No paid assets or copyrighted images
+- GitHub Pages deployment through GitHub Actions
 
 ## Run Locally
 
@@ -34,6 +41,10 @@ PowerShell-safe version:
 ```bash
 npm.cmd run build
 ```
+
+## Deploy
+
+Push to `main`. GitHub Actions builds the Vite app and deploys `dist` to GitHub Pages.
 
 ## Lint
 
