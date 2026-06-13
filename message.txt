@@ -95,3 +95,7 @@ Publishing:
 Remote origin is https://github.com/ponasytfun/portfolio.git.
 GitHub Pages deploy is configured through .github/workflows/deploy.yml.
 GitHub Pages source should be GitHub Actions.
+
+License:
+LICENSE is All Rights Reserved. The repository is public for GitHub Pages, but
+the code, assets, design, and content are not open source.

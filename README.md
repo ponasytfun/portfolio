@@ -17,6 +17,13 @@ https://ponasytfun.github.io/portfolio/
 - Reduced-motion support
 - No paid assets or copyrighted images
 - GitHub Pages deployment through GitHub Actions
+- All Rights Reserved license; this is not an open-source project
+
+## License
+
+All rights reserved. Viewing this repository does not grant permission to copy,
+modify, distribute, host, reuse, or create derivative works from the code,
+assets, design, or content.
 
 ## Run Locally
 
