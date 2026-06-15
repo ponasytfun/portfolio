@@ -1,9 +1,9 @@
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ index, project }) {
   const hasScreenshots = Boolean(project.links?.screenshots)
   const hasCode = Boolean(project.links?.code)
 
   return (
-    <article className="project-card">
+    <article className="project-card" style={{ '--project-index': index }}>
       <div className="card-topline">
         <h3>{project.name}</h3>
         <span className="status-badge">{project.status}</span>

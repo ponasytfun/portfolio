@@ -13,8 +13,8 @@ export default function Projects({ projects }) {
           </p>
         </div>
         <div className="project-grid">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard index={index} key={project.name} project={project} />
           ))}
         </div>
       </div>

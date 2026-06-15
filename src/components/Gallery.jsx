@@ -29,11 +29,12 @@ export default function Gallery({ gallery }) {
 
         {gallery.length > 0 ? (
           <div className="gallery-grid">
-            {gallery.map((item) => (
+            {gallery.map((item, index) => (
               <button
                 className="gallery-item"
                 key={item.src}
                 onClick={() => setActiveImage(item)}
+                style={{ '--gallery-index': index }}
                 type="button"
               >
                 <img alt={item.alt} loading="lazy" src={item.src} />

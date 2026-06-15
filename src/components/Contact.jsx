@@ -11,8 +11,12 @@ export default function Contact({ contacts }) {
           </p>
         </div>
         <div className="contact-grid">
-          {contacts.map((contact) => (
-            <article className="contact-card" key={contact.label}>
+          {contacts.map((contact, index) => (
+            <article
+              className="contact-card"
+              key={contact.label}
+              style={{ '--contact-index': index }}
+            >
               <h3>{contact.label}</h3>
               <p>{contact.value}</p>
               {contact.href ? (

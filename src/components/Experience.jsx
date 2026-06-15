@@ -12,7 +12,7 @@ export default function Experience({ items }) {
         </div>
         <ol className="experience-list">
           {items.map((item, index) => (
-            <li key={item}>
+            <li key={item} style={{ '--experience-index': index }}>
               <span>{String(index + 1).padStart(2, '0')}</span>
               <p>{item}</p>
             </li>
