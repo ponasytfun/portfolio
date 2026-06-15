@@ -5,17 +5,49 @@ const levelTone = {
   Advanced: 'level-advanced',
 }
 
+const levelScore = {
+  Learning: 38,
+  Comfortable: 62,
+  Strong: 82,
+  Advanced: 94,
+}
+
+const featuredSkills = [
+  { label: 'Core stack', value: 'Java + Paper API' },
+  { label: 'Best area', value: 'Minecraft systems' },
+  { label: 'Workflow', value: 'Maven, Git, hosting' },
+]
+
 export default function Skills({ skillGroups }) {
+  const totalSkills = skillGroups.reduce((total, group) => total + group.skills.length, 0)
+
   return (
-    <section className="section-band" id="skills">
+    <section className="section-band skills-section" id="skills">
       <div className="section-inner">
-        <div className="section-heading">
-          <p className="eyebrow">Skills I am actively building</p>
-          <h2>Technical Skills</h2>
-          <p>
-            Honest skill labels for the tools, languages, and workflows behind the projects.
-          </p>
+        <div className="skills-header">
+          <div className="section-heading">
+            <p className="eyebrow">Skills I am actively building</p>
+            <h2>Technical Stack</h2>
+            <p>
+              A clearer look at the languages, tools, and workflows behind the plugin
+              systems, server work, automation ideas, and UI experiments.
+            </p>
+          </div>
+
+          <div className="skills-summary" aria-label="Skill highlights">
+            {featuredSkills.map((item) => (
+              <div className="summary-tile" key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+            <div className="summary-tile summary-total">
+              <span>Tracked skills</span>
+              <strong>{totalSkills}</strong>
+            </div>
+          </div>
         </div>
+
         <div className="skills-grid">
           {skillGroups.map((group, groupIndex) => (
             <article
@@ -23,16 +55,33 @@ export default function Skills({ skillGroups }) {
               key={group.title}
               style={{ '--skill-card-index': groupIndex }}
             >
-              <h3>{group.title}</h3>
+              <div className="skill-card-top">
+                <span className="skill-card-number">
+                  {String(groupIndex + 1).padStart(2, '0')}
+                </span>
+                <div>
+                  <h3>{group.title}</h3>
+                  <p>{group.summary}</p>
+                </div>
+              </div>
+
               <ul className="skill-list">
                 {group.skills.map((skill, skillIndex) => (
                   <li
                     key={`${group.title}-${skill.name}`}
-                    style={{ '--skill-index': skillIndex }}
+                    style={{
+                      '--skill-index': skillIndex,
+                      '--skill-level': `${levelScore[skill.level]}%`,
+                    }}
                   >
-                    <span>{skill.name}</span>
-                    <span className={`level-pill ${levelTone[skill.level]}`}>
-                      {skill.level}
+                    <div className="skill-row-main">
+                      <span className="skill-name">{skill.name}</span>
+                      <span className={`level-pill ${levelTone[skill.level]}`}>
+                        {skill.level}
+                      </span>
+                    </div>
+                    <span className="skill-meter" aria-hidden="true">
+                      <span />
                     </span>
                   </li>
                 ))}

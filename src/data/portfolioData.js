@@ -80,6 +80,7 @@ export const portfolioData = {
   skillGroups: [
     {
       title: 'Programming',
+      summary: 'Languages used for plugins, tooling, automation, and web experiments.',
       skills: [
         { name: 'Java', level: 'Strong' },
         { name: 'JavaScript', level: 'Comfortable' },
@@ -90,6 +91,7 @@ export const portfolioData = {
     },
     {
       title: 'Minecraft Development',
+      summary: 'Server-side systems, gameplay mechanics, commands, configs, and plugin structure.',
       skills: [
         { name: 'Paper API', level: 'Strong' },
         { name: 'Maven', level: 'Comfortable' },
@@ -103,6 +105,7 @@ export const portfolioData = {
     },
     {
       title: 'Web Development',
+      summary: 'Responsive interfaces, polished CSS, animations, and React/Vite pages.',
       skills: [
         { name: 'HTML', level: 'Strong' },
         { name: 'CSS', level: 'Strong' },
@@ -113,6 +116,7 @@ export const portfolioData = {
     },
     {
       title: 'Tools',
+      summary: 'Daily development setup, version control, builds, and server deployment basics.',
       skills: [
         { name: 'VS Code', level: 'Comfortable' },
         { name: 'IntelliJ IDEA', level: 'Comfortable' },
@@ -123,6 +127,7 @@ export const portfolioData = {
     },
     {
       title: 'Soft / Practical',
+      summary: 'Problem-solving habits that keep projects moving when code gets annoying.',
       skills: [
         { name: 'Debugging', level: 'Strong' },
         { name: 'Refactoring', level: 'Comfortable' },
