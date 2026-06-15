@@ -23,6 +23,7 @@
 - Added larger site-wide animations for the background grid, aurora glow, navigation, hero content, buttons, project cards, gallery items, modal previews, experience timeline, and contact cards.
 - Refined the animation system by removing noisy infinite pulses/shimmers, toning down hover movement, and keeping the quantum orb as the main animated visual.
 - Redesigned the skills section with summary tiles, category descriptions, numbered skill panels, and honest level meters.
+- Replaced the sticky skills-card glint sweep with a static ambient glow so mobile hover states do not freeze a vertical highlight.
 - Added accessibility basics including semantic sections, heading order, focus states, disabled placeholder buttons, image alt support, and reduced-motion styles.
 - Added project documentation, audit notes, testing checklist, and handoff message.
 - Added `.gitignore` for dependencies, build output, logs, and generated workspace folders.
