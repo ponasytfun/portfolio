@@ -17,12 +17,19 @@ export default function Skills({ skillGroups }) {
           </p>
         </div>
         <div className="skills-grid">
-          {skillGroups.map((group) => (
-            <article className="skill-card" key={group.title}>
+          {skillGroups.map((group, groupIndex) => (
+            <article
+              className="skill-card"
+              key={group.title}
+              style={{ '--skill-card-index': groupIndex }}
+            >
               <h3>{group.title}</h3>
               <ul className="skill-list">
-                {group.skills.map((skill) => (
-                  <li key={`${group.title}-${skill.name}`}>
+                {group.skills.map((skill, skillIndex) => (
+                  <li
+                    key={`${group.title}-${skill.name}`}
+                    style={{ '--skill-index': skillIndex }}
+                  >
                     <span>{skill.name}</span>
                     <span className={`level-pill ${levelTone[skill.level]}`}>
                       {skill.level}

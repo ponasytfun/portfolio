@@ -19,6 +19,7 @@
 - Added two Prism plugin ability visual screenshots to the gallery.
 - Replaced the top-left `G` brand mark with the round profile image.
 - Added a round profile-image favicon and Apple touch icon.
+- Added staggered card, row, hover, shimmer, and level-pill animations to the skills section.
 - Added accessibility basics including semantic sections, heading order, focus states, disabled placeholder buttons, image alt support, and reduced-motion styles.
 - Added project documentation, audit notes, testing checklist, and handoff message.
 - Added `.gitignore` for dependencies, build output, logs, and generated workspace folders.
