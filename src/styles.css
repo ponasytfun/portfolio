@@ -59,7 +59,7 @@ body::before {
   background-position: center;
   background-size: 52px 52px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
-  animation: gridDrift 26s linear infinite;
+  opacity: 0.82;
 }
 
 body::after {
@@ -72,7 +72,6 @@ body::after {
     radial-gradient(circle at 74% 16%, rgba(64, 232, 255, 0.13), transparent 30%),
     radial-gradient(circle at 12% 38%, rgba(164, 108, 255, 0.12), transparent 28%),
     linear-gradient(135deg, rgba(2, 7, 18, 0), rgba(0, 0, 0, 0.36));
-  animation: auroraShift 18s ease-in-out infinite alternate;
 }
 
 a {
@@ -121,7 +120,7 @@ button {
 .section-heading {
   max-width: 720px;
   margin-bottom: 38px;
-  animation: headingRise 680ms ease both;
+  animation: softRise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .section-heading h2 {
@@ -162,7 +161,7 @@ button {
   z-index: 20;
   padding: 16px 24px 0;
   pointer-events: none;
-  animation: navDrop 700ms ease both;
+  animation: softDrop 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .nav-shell {
@@ -199,7 +198,16 @@ button {
   background: linear-gradient(135deg, var(--cyan), var(--violet));
   border-radius: 50%;
   box-shadow: 0 0 22px rgba(64, 232, 255, 0.42);
-  animation: brandPulse 3.4s ease-in-out infinite;
+  transition:
+    box-shadow var(--duration) ease,
+    transform var(--duration) ease;
+}
+
+.brand:hover .brand-mark {
+  box-shadow:
+    0 0 24px rgba(64, 232, 255, 0.5),
+    0 0 34px rgba(164, 108, 255, 0.18);
+  transform: translateY(-1px);
 }
 
 .brand-mark img {
@@ -291,9 +299,7 @@ button {
   box-shadow:
     0 0 32px rgba(64, 232, 255, 0.32),
     0 0 56px rgba(164, 108, 255, 0.24);
-  animation:
-    heroRise 760ms ease both,
-    profilePulse 4s ease-in-out infinite 900ms;
+  animation: softRise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .profile-frame::after {
@@ -325,9 +331,7 @@ button {
   font-size: 4.6rem;
   line-height: 0.98;
   letter-spacing: 0;
-  animation:
-    heroRise 760ms ease both 80ms,
-    titleShimmer 5.5s ease-in-out infinite 900ms;
+  animation: softRise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both 80ms;
 }
 
 .hero-subtitle {
@@ -336,7 +340,7 @@ button {
   color: var(--text);
   font-size: 1.48rem;
   line-height: 1.45;
-  animation: heroRise 760ms ease both 170ms;
+  animation: softRise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both 150ms;
 }
 
 .hero-support {
@@ -345,7 +349,7 @@ button {
   color: var(--text-muted);
   font-size: 1.04rem;
   line-height: 1.8;
-  animation: heroRise 760ms ease both 260ms;
+  animation: softRise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both 220ms;
 }
 
 .hero-actions {
@@ -353,7 +357,7 @@ button {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 34px;
-  animation: heroRise 760ms ease both 340ms;
+  animation: softRise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both 290ms;
 }
 
 .button {
@@ -391,7 +395,7 @@ button {
 }
 
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .button:hover::after {
@@ -459,7 +463,7 @@ button {
     linear-gradient(90deg, rgba(164, 108, 255, 0.08) 1px, transparent 1px);
   background-size: 78px 78px;
   mask-image: radial-gradient(circle at 72% 44%, black 0%, transparent 58%);
-  animation: gridDrift 18s linear infinite reverse;
+  opacity: 0.55;
 }
 
 .orb-shell {
@@ -797,8 +801,8 @@ button {
 .project-card {
   min-height: 330px;
   padding: 24px;
-  animation: cardRise 740ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--project-index) * 110ms);
+  animation: softRise 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--project-index) * 70ms);
   transition:
     transform 240ms ease,
     border-color 240ms ease,
@@ -809,8 +813,8 @@ button {
   border-color: rgba(64, 232, 255, 0.42);
   box-shadow:
     var(--shadow),
-    0 0 42px rgba(64, 232, 255, 0.16);
-  transform: translateY(-8px) scale(1.012);
+    0 0 30px rgba(64, 232, 255, 0.12);
+  transform: translateY(-3px);
 }
 
 .card-topline {
@@ -891,7 +895,7 @@ button {
 .tech-list li:hover {
   color: var(--text);
   border-color: rgba(64, 232, 255, 0.38);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .card-actions {
@@ -917,8 +921,8 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   cursor: pointer;
-  animation: galleryRise 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--gallery-index) * 110ms);
+  animation: softRise 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--gallery-index) * 80ms);
   transition:
     border-color 240ms ease,
     box-shadow 240ms ease,
@@ -935,15 +939,15 @@ button {
 }
 
 .gallery-item:hover img {
-  transform: scale(1.04);
+  transform: scale(1.025);
 }
 
 .gallery-item:hover {
   border-color: rgba(64, 232, 255, 0.52);
   box-shadow:
     var(--shadow),
-    0 0 38px rgba(164, 108, 255, 0.18);
-  transform: translateY(-7px);
+    0 0 28px rgba(164, 108, 255, 0.14);
+  transform: translateY(-3px);
 }
 
 .gallery-item span {
@@ -1009,14 +1013,13 @@ button {
 
 .skills-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  perspective: 1200px;
 }
 
 .skill-card {
   padding: 22px;
   transform-origin: center top;
-  animation: skillCardIn 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--skill-card-index) * 90ms);
+  animation: softRise 540ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--skill-card-index) * 70ms);
   transition:
     transform 240ms ease,
     border-color 240ms ease,
@@ -1028,7 +1031,7 @@ button {
   inset: -1px;
   content: "";
   background:
-    linear-gradient(120deg, transparent 0%, rgba(64, 232, 255, 0.2) 24%, transparent 42%),
+    linear-gradient(120deg, transparent 0%, rgba(64, 232, 255, 0.14) 24%, transparent 42%),
     radial-gradient(circle at var(--glow-x, 20%) 0%, rgba(164, 108, 255, 0.18), transparent 34%);
   opacity: 0;
   transform: translateX(-28%);
@@ -1042,8 +1045,8 @@ button {
   border-color: rgba(64, 232, 255, 0.42);
   box-shadow:
     var(--shadow),
-    0 0 34px rgba(64, 232, 255, 0.14);
-  transform: translateY(-5px) rotateX(1deg);
+    0 0 28px rgba(64, 232, 255, 0.12);
+  transform: translateY(-3px);
 }
 
 .skill-card:hover::after {
@@ -1078,8 +1081,8 @@ button {
   border-radius: var(--radius);
   transform: translateY(10px);
   opacity: 0;
-  animation: skillRowIn 520ms ease both;
-  animation-delay: calc((var(--skill-card-index) * 90ms) + (var(--skill-index) * 34ms) + 180ms);
+  animation: rowFade 380ms ease both;
+  animation-delay: calc((var(--skill-card-index) * 70ms) + (var(--skill-index) * 24ms) + 140ms);
   transition:
     background var(--duration) ease,
     border-color var(--duration) ease,
@@ -1103,7 +1106,7 @@ button {
   color: var(--text);
   background: rgba(64, 232, 255, 0.065);
   border-color: rgba(64, 232, 255, 0.22);
-  transform: translateX(3px);
+  transform: translateX(2px);
 }
 
 .skill-list li:hover::before {
@@ -1122,9 +1125,6 @@ button {
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 850;
-  animation: levelPulse 3.2s ease-in-out infinite;
-  animation-delay: calc(var(--skill-index) * 120ms);
-  box-shadow: 0 0 0 rgba(64, 232, 255, 0);
 }
 
 .level-learning {
@@ -1167,8 +1167,8 @@ button {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  animation: timelineSlide 650ms ease both;
-  animation-delay: calc(var(--experience-index) * 95ms);
+  animation: softSlide 500ms ease both;
+  animation-delay: calc(var(--experience-index) * 70ms);
   transition:
     transform 220ms ease,
     border-color 220ms ease,
@@ -1180,7 +1180,7 @@ button {
   background: rgba(64, 232, 255, 0.055);
   border-color: rgba(64, 232, 255, 0.3);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
-  transform: translateX(8px);
+  transform: translateX(3px);
 }
 
 .experience-list span {
@@ -1193,7 +1193,6 @@ button {
   border: 1px solid rgba(64, 232, 255, 0.2);
   border-radius: var(--radius);
   font-weight: 900;
-  animation: numberGlow 3.5s ease-in-out infinite;
 }
 
 .experience-list p {
@@ -1219,8 +1218,8 @@ button {
 
 .contact-card {
   padding: 22px;
-  animation: contactPop 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--contact-index) * 105ms);
+  animation: softRise 540ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--contact-index) * 80ms);
   transition:
     transform 230ms ease,
     border-color 230ms ease,
@@ -1231,8 +1230,8 @@ button {
   border-color: rgba(164, 108, 255, 0.42);
   box-shadow:
     var(--shadow),
-    0 0 38px rgba(164, 108, 255, 0.14);
-  transform: translateY(-6px);
+    0 0 28px rgba(164, 108, 255, 0.12);
+  transform: translateY(-3px);
 }
 
 .contact-card h3,
@@ -1342,32 +1341,10 @@ button {
   }
 }
 
-@keyframes gridDrift {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 104px 104px;
-  }
-}
-
-@keyframes auroraShift {
-  from {
-    filter: hue-rotate(0deg) saturate(1);
-    opacity: 0.92;
-    transform: scale(1);
-  }
-  to {
-    filter: hue-rotate(18deg) saturate(1.18);
-    opacity: 1;
-    transform: scale(1.035);
-  }
-}
-
-@keyframes navDrop {
+@keyframes softDrop {
   from {
     opacity: 0;
-    transform: translateY(-18px);
+    transform: translateY(-12px);
   }
   to {
     opacity: 1;
@@ -1375,24 +1352,10 @@ button {
   }
 }
 
-@keyframes brandPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 22px rgba(64, 232, 255, 0.42);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow:
-      0 0 26px rgba(64, 232, 255, 0.62),
-      0 0 46px rgba(164, 108, 255, 0.28);
-    transform: scale(1.04);
-  }
-}
-
-@keyframes headingRise {
+@keyframes softRise {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -1400,64 +1363,25 @@ button {
   }
 }
 
-@keyframes heroRise {
+@keyframes softSlide {
   from {
     opacity: 0;
-    transform: translateY(26px);
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rowFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes profilePulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 32px rgba(64, 232, 255, 0.32),
-      0 0 56px rgba(164, 108, 255, 0.24);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow:
-      0 0 42px rgba(64, 232, 255, 0.54),
-      0 0 76px rgba(164, 108, 255, 0.36);
-    transform: scale(1.025);
-  }
-}
-
-@keyframes titleShimmer {
-  0%,
-  100% {
-    background-position: 0% 50%;
-    filter: drop-shadow(0 0 0 rgba(64, 232, 255, 0));
-  }
-  50% {
-    background-position: 100% 50%;
-    filter: drop-shadow(0 0 18px rgba(64, 232, 255, 0.18));
-  }
-}
-
-@keyframes cardRise {
-  from {
-    opacity: 0;
-    transform: translateY(26px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes galleryRise {
-  from {
-    opacity: 0;
-    transform: translateY(28px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
@@ -1478,72 +1402,6 @@ button {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes timelineSlide {
-  from {
-    opacity: 0;
-    transform: translateX(-24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes numberGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 rgba(64, 232, 255, 0);
-  }
-  50% {
-    box-shadow: 0 0 22px rgba(64, 232, 255, 0.16);
-  }
-}
-
-@keyframes contactPop {
-  from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes skillCardIn {
-  from {
-    opacity: 0;
-    transform: translateY(22px) rotateX(4deg) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0deg) scale(1);
-  }
-}
-
-@keyframes skillRowIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes levelPulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 rgba(64, 232, 255, 0);
-    filter: saturate(1);
-  }
-  50% {
-    box-shadow: 0 0 18px rgba(64, 232, 255, 0.14);
-    filter: saturate(1.18);
   }
 }
 
