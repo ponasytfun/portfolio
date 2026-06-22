@@ -3,61 +3,81 @@ const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`
 export const portfolioData = {
   navItems: [
     { label: 'Home', href: '#home' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Screenshots', href: '#screenshots' },
+    { label: 'About', href: '#about' },
+    { label: 'Current', href: '#current-roles' },
+    { label: 'Past', href: '#past-roles' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
+    { label: 'Proof', href: '#screenshots' },
     { label: 'Contact', href: '#contact' },
   ],
   hero: {
-    badge: 'Developer Portfolio',
-    title: "Hi, I'm Glitch.",
+    badge: 'Minecraft Staff Portfolio',
+    name: 'Glitch',
+    title: 'Minecraft Developer & Community Manager',
     profileImage: {
-      src: assetPath('profile/glitch-pfp.png'),
+      src: assetPath('profile/glitch-pfp-round.png'),
       alt: 'Glitch profile avatar',
     },
-    subtitle:
-      'I build Minecraft plugins, server systems, automation tools, and UI experiments.',
+    subtitle: 'Building servers • Managing communities • Crafting experiences',
     support:
-      'I have worked with server projects like Prism SMP, Unstable SMP, Vortex SMP, Primal SMP, Anchor SMP, and Reality SMP, focusing on custom gameplay features, admin tools, progression systems, and practical coding projects.',
-    actions: [
-      { label: 'View Projects', href: '#projects', variant: 'primary' },
-      { label: 'View Screenshots', href: '#screenshots', variant: 'secondary' },
-      { label: 'See Skills', href: '#skills', variant: 'ghost' },
+      'I build and support Minecraft servers, Discord communities, plugin systems, staff teams, events, and server operations with a practical community-first mindset.',
+    primaryAction: { label: 'Join Community', href: '#contact' },
+    secondaryAction: { label: 'View Staff Work', href: '#current-roles' },
+  },
+  about: {
+    heading: 'ABOUT ME',
+    text:
+      "Hi, I'm Glitch. I am a Minecraft developer and experienced staff member focused on building, managing, and improving online communities. I work with Minecraft servers, Discord communities, plugin systems, staff teams, and server operations.",
+    stats: [
+      { value: '6+', label: 'Servers Worked With' },
+      { value: '3+', label: 'Years Experience' },
+      { value: '1.21+', label: 'Minecraft Development' },
     ],
   },
-  projects: [
+  currentRoles: [
     {
-      name: 'Minecraft Plugin Systems',
+      name: 'Prism SMP',
+      role: 'Developer',
       description:
-        'Custom server-side systems built for Paper / Java Minecraft servers, including gameplay mechanics, admin tools, events, and progression features.',
-      tech: ['Java', 'Paper API', 'Maven', 'Minecraft 1.21.x'],
-      status: 'In progress',
-      links: { details: '#experience', screenshots: '#screenshots' },
+        'Custom gameplay systems, server management, and community features.',
+      icon: 'DEV',
+      stats: [
+        { label: 'Status', value: 'Active' },
+        { label: 'Members', value: '500+ members' },
+      ],
     },
     {
-      name: 'Discord / Server Tools',
+      name: 'Unstable SMP',
+      role: 'Staff / Developer',
       description:
-        'Tools and integrations for server communities, moderation workflows, logging, and automation.',
-      tech: ['Java', 'JavaScript', 'APIs', 'Discord bots'],
-      status: 'Concepts and tools',
-      links: { details: '#experience' },
+        'Staff support, events, server systems, and community management.',
+      icon: 'OPS',
+      stats: [
+        { label: 'Status', value: 'Active' },
+        { label: 'Members', value: '1k+ members' },
+      ],
+    },
+  ],
+  pastRoles: [
+    {
+      name: 'Vortex SMP',
+      role: 'Staff',
+      description: 'Server moderation, player support, and event assistance.',
     },
     {
-      name: 'Automation Experiments',
-      description:
-        'Local tools and experiments focused on automating repetitive workflows and improving development speed.',
-      tech: ['Python', 'JavaScript', 'Desktop automation'],
-      status: 'Experimental',
-      links: { details: '#experience' },
+      name: 'Primal SMP',
+      role: 'Staff',
+      description: 'Community support and server operations.',
     },
     {
-      name: 'Web / UI Experiments',
-      description:
-        'Frontend experiments focused on clean UI, animated effects, and interactive layouts.',
-      tech: ['HTML', 'CSS', 'JavaScript', 'React'],
-      status: 'Growing',
-      links: { details: '#skills', screenshots: '#screenshots' },
+      name: 'Anchor SMP',
+      role: 'Staff',
+      description: 'Staff work, management support, and player communication.',
+    },
+    {
+      name: 'Reality SMP',
+      role: 'Staff',
+      description: 'Server staff experience and community moderation.',
     },
   ],
   gallery: [
@@ -77,77 +97,69 @@ export const portfolioData = {
       caption: 'Prism plugin ability visuals - snowfield preview',
     },
   ],
-  skillGroups: [
+  galleryIntro: {
+    eyebrow: 'Project evidence',
+    heading: 'Screenshots and Systems',
+    text:
+      'Visual proof from plugin work, server systems, and Minecraft development experiments.',
+  },
+  specializedSkills: [
     {
-      title: 'Programming',
-      summary: 'Languages used for plugins, tooling, automation, and web experiments.',
-      skills: [
-        { name: 'Java', level: 'Strong' },
-        { name: 'JavaScript', level: 'Comfortable' },
-        { name: 'TypeScript', level: 'Learning' },
-        { name: 'Python', level: 'Comfortable' },
-        { name: 'Lua / Luau', level: 'Learning' },
-      ],
+      title: 'Staff Management',
+      description:
+        'Building hierarchies, training moderation teams, and enforcing rules across servers.',
+      label: 'TEAM',
     },
     {
-      title: 'Minecraft Development',
-      summary: 'Server-side systems, gameplay mechanics, commands, configs, and plugin structure.',
-      skills: [
-        { name: 'Paper API', level: 'Strong' },
-        { name: 'Maven', level: 'Comfortable' },
-        { name: 'Plugin architecture', level: 'Strong' },
-        { name: 'Config systems', level: 'Comfortable' },
-        { name: 'Event listeners', level: 'Strong' },
-        { name: 'Commands', level: 'Strong' },
-        { name: 'Permissions', level: 'Comfortable' },
-        { name: 'Server tools', level: 'Comfortable' },
-      ],
+      title: 'Discord Development',
+      description: 'Bot integrations, automations, and server configuration.',
+      label: 'DISC',
     },
     {
-      title: 'Web Development',
-      summary: 'Responsive interfaces, polished CSS, animations, and React/Vite pages.',
-      skills: [
-        { name: 'HTML', level: 'Strong' },
-        { name: 'CSS', level: 'Strong' },
-        { name: 'Responsive UI', level: 'Comfortable' },
-        { name: 'Animations', level: 'Comfortable' },
-        { name: 'React / Vite', level: 'Learning' },
-      ],
+      title: 'Minecraft Plugin Development',
+      description: 'Custom Java plugin systems, gameplay mechanics, and server tools.',
+      label: 'JAVA',
     },
     {
-      title: 'Tools',
-      summary: 'Daily development setup, version control, builds, and server deployment basics.',
-      skills: [
-        { name: 'VS Code', level: 'Comfortable' },
-        { name: 'IntelliJ IDEA', level: 'Comfortable' },
-        { name: 'Git / GitHub', level: 'Comfortable' },
-        { name: 'Maven', level: 'Comfortable' },
-        { name: 'Server hosting', level: 'Strong' },
-      ],
+      title: 'Server Architecture',
+      description: 'Designing channel layouts, permissions, ranks, and staff structures.',
+      label: 'ARCH',
     },
     {
-      title: 'Soft / Practical',
-      summary: 'Problem-solving habits that keep projects moving when code gets annoying.',
-      skills: [
-        { name: 'Debugging', level: 'Strong' },
-        { name: 'Refactoring', level: 'Comfortable' },
-        { name: 'Testing', level: 'Learning' },
-        { name: 'Reading logs', level: 'Strong' },
-        { name: 'Turning ideas into systems', level: 'Strong' },
-      ],
+      title: 'Bot Configuration',
+      description: 'Setting up moderation bots, welcome systems, tickets, and automation.',
+      label: 'BOT',
+    },
+    {
+      title: 'Community Building',
+      description:
+        'Growing active communities through events, engagement, and player interaction.',
+      label: 'GROW',
+    },
+    {
+      title: 'MC Server Ops',
+      description:
+        'Managing Survival, Network, and Event servers with plugins at scale.',
+      label: 'OPS',
+    },
+    {
+      title: 'Plugin Configuration',
+      description:
+        'Custom YAML configs for EssentialsX, LuckPerms, TAB, WorldGuard, and other plugins.',
+      label: 'YAML',
+    },
+    {
+      title: 'Event Coordination',
+      description: 'Planning and running live community events with real-time logistics.',
+      label: 'LIVE',
     },
   ],
-  experience: [
-    'Built custom Minecraft server plugins and gameplay systems.',
-    'Worked on server features such as abilities, events, admin tools, and progression.',
-    'Debugged Java / Maven plugin errors and adapted code for newer Minecraft versions.',
-    'Designed community tools and automation ideas for Discord and local workflows.',
-    'Created UI and gameplay concepts for interactive projects.',
-  ],
-  contacts: [
-    { label: 'GitHub', value: 'Coming soon', href: null },
-    { label: 'Discord', value: 'mr.zap', href: null },
-    { label: 'Email', value: 'Add contact email here', href: null },
-    { label: 'Projects', value: 'Selected development work', href: '#projects' },
-  ],
+  contact: {
+    heading: 'CONNECT & CONTACT',
+    text: 'Contact me on Discord:',
+    discordUsername: '.glitch',
+    // Placeholder until a real Discord invite is added.
+    communityHref: '#',
+    communityLabel: 'My Community',
+  },
 }

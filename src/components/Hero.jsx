@@ -8,21 +8,21 @@ export default function Hero({ hero }) {
         <div className="hero-copy">
           <div className="profile-frame">
             <img alt={hero.profileImage.alt} src={hero.profileImage.src} />
+            <span className="online-dot" aria-label="Online" />
           </div>
           <p className="eyebrow">{hero.badge}</p>
-          <h1>{hero.title}</h1>
+          <h1>{hero.name}</h1>
+          <p className="hero-title">{hero.title}</p>
           <p className="hero-subtitle">{hero.subtitle}</p>
           <p className="hero-support">{hero.support}</p>
           <div className="hero-actions" aria-label="Portfolio shortcuts">
-            {hero.actions.map((action) => (
-              <a
-                className={`button button-${action.variant}`}
-                href={action.href}
-                key={action.href}
-              >
-                {action.label}
-              </a>
-            ))}
+            <a className="button button-primary button-with-icon" href={hero.primaryAction.href}>
+              <span className="button-icon" aria-hidden="true">D</span>
+              {hero.primaryAction.label}
+            </a>
+            <a className="button button-secondary" href={hero.secondaryAction.href}>
+              {hero.secondaryAction.label}
+            </a>
           </div>
         </div>
       </div>

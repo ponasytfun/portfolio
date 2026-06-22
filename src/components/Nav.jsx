@@ -9,9 +9,10 @@ export default function Nav({ brandImage, items }) {
       .filter(Boolean)
 
     const handleScroll = () => {
+      const activationOffset = Math.max(180, window.innerHeight * 0.2)
       const current = sectionIds.findLast((id) => {
         const section = document.getElementById(id)
-        return section && section.getBoundingClientRect().top <= 140
+        return section && section.getBoundingClientRect().top <= activationOffset
       })
 
       if (current) {
@@ -19,10 +20,18 @@ export default function Nav({ brandImage, items }) {
       }
     }
 
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    const scheduleHandleScroll = () => window.requestAnimationFrame(handleScroll)
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    handleScroll()
+    const initialAnchorCheck = window.setTimeout(handleScroll, 250)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('hashchange', scheduleHandleScroll)
+
+    return () => {
+      window.clearTimeout(initialAnchorCheck)
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('hashchange', scheduleHandleScroll)
+    }
   }, [items])
 
   return (

@@ -1,10 +1,10 @@
 import { portfolioData } from './data/portfolioData'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import Projects from './components/Projects'
+import About from './components/About'
+import StaffRoles from './components/StaffRoles'
+import SpecializedSkills from './components/SpecializedSkills'
 import Gallery from './components/Gallery'
-import Skills from './components/Skills'
-import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -14,13 +14,14 @@ export default function App() {
       <Nav brandImage={portfolioData.hero.profileImage} items={portfolioData.navItems} />
       <main>
         <Hero hero={portfolioData.hero} />
-        <Projects projects={portfolioData.projects} />
+        <About about={portfolioData.about} />
+        <StaffRoles currentRoles={portfolioData.currentRoles} pastRoles={portfolioData.pastRoles} />
+        <SpecializedSkills skills={portfolioData.specializedSkills} />
         <Gallery
           gallery={portfolioData.gallery}
+          intro={portfolioData.galleryIntro}
         />
-        <Skills skillGroups={portfolioData.skillGroups} />
-        <Experience items={portfolioData.experience} />
-        <Contact contacts={portfolioData.contacts} />
+        <Contact contact={portfolioData.contact} />
       </main>
       <Footer />
     </>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Gallery({ gallery }) {
+export default function Gallery({ gallery, intro }) {
   const [activeImage, setActiveImage] = useState(null)
 
   useEffect(() => {
@@ -20,11 +20,9 @@ export default function Gallery({ gallery }) {
     <section className="section-band section-band-muted" id="screenshots">
       <div className="section-inner">
         <div className="section-heading">
-          <p className="eyebrow">Screenshots and previews</p>
-          <h2>Gallery</h2>
-          <p>
-            A place for project captures, UI previews, plugin screens, and technical demos.
-          </p>
+          <p className="eyebrow">{intro.eyebrow}</p>
+          <h2>{intro.heading}</h2>
+          <p>{intro.text}</p>
         </div>
 
         {gallery.length > 0 ? (

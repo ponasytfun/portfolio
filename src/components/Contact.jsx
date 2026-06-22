@@ -1,35 +1,47 @@
-export default function Contact({ contacts }) {
+import { useState } from 'react'
+
+export default function Contact({ contact }) {
+  const [copied, setCopied] = useState(false)
+
+  const copyDiscordUsername = async () => {
+    try {
+      await navigator.clipboard.writeText(contact.discordUsername)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1800)
+    } catch {
+      setCopied(false)
+    }
+  }
+
   return (
     <section className="section-band contact-section" id="contact">
       <div className="section-inner contact-inner">
         <div className="section-heading">
-          <p className="eyebrow">Contact and links</p>
-          <h2>Build Log Open</h2>
-          <p>
-            Replace the placeholders with real links when GitHub, Discord, or email details
-            are ready to share.
-          </p>
+          <p className="eyebrow">Discord first</p>
+          <h2>{contact.heading}</h2>
+          <p>{contact.text}</p>
         </div>
-        <div className="contact-grid">
-          {contacts.map((contact, index) => (
-            <article
-              className="contact-card"
-              key={contact.label}
-              style={{ '--contact-index': index }}
-            >
-              <h3>{contact.label}</h3>
-              <p>{contact.value}</p>
-              {contact.href ? (
-                <a className="button button-small button-secondary" href={contact.href}>
-                  Open
-                </a>
-              ) : (
-                <button className="button button-small button-disabled" disabled type="button">
-                  Placeholder
-                </button>
-              )}
-            </article>
-          ))}
+        <div className="contact-panel">
+          <button
+            aria-label={`Copy Discord username ${contact.discordUsername}`}
+            className="button contact-button"
+            onClick={copyDiscordUsername}
+            type="button"
+          >
+            <span className="button-icon" aria-hidden="true">D</span>
+            {copied ? 'Copied username' : contact.discordUsername}
+          </button>
+          <a
+            aria-label="Open Glitch community invite"
+            className="button contact-button contact-button-secondary"
+            href={contact.communityHref}
+          >
+            <span className="button-icon" aria-hidden="true">D</span>
+            {contact.communityLabel}
+          </a>
+          <p className="contact-note">
+            The community button is ready for a real Discord invite when one is added.
+          </p>
         </div>
       </div>
     </section>
