@@ -1,23 +1,23 @@
 :root {
   color-scheme: dark;
-  --bg: #070913;
-  --bg-soft: #0b1020;
-  --bg-muted: #0e1428;
-  --surface: rgba(14, 20, 40, 0.72);
-  --surface-strong: rgba(18, 27, 52, 0.88);
-  --text: #eef5ff;
-  --text-muted: #b5c2d6;
-  --text-soft: #8190aa;
-  --cyan: #40e8ff;
-  --blue: #5c8cff;
-  --violet: #a46cff;
-  --green: #63f3b1;
-  --amber: #f4c95d;
-  --border: rgba(142, 169, 255, 0.22);
-  --border-strong: rgba(91, 232, 255, 0.52);
+  --bg: #100713;
+  --bg-soft: #170b20;
+  --bg-muted: #21102d;
+  --surface: rgba(30, 14, 42, 0.72);
+  --surface-strong: rgba(40, 18, 56, 0.88);
+  --text: #fff0fb;
+  --text-muted: #dbc0d6;
+  --text-soft: #a98da7;
+  --cyan: #ff6bd6;
+  --blue: #be6cff;
+  --violet: #ff4fba;
+  --green: #ff8ad8;
+  --amber: #f6a1ff;
+  --border: rgba(255, 143, 224, 0.22);
+  --border-strong: rgba(255, 107, 214, 0.52);
   --radius: 8px;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-  --shadow-cyan: 0 0 34px rgba(64, 232, 255, 0.2);
+  --shadow-cyan: 0 0 34px rgba(255, 107, 214, 0.2);
   --duration: 180ms;
   --max-width: 1180px;
   font-family:
@@ -42,7 +42,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(13, 19, 38, 0.96), var(--bg) 38%),
+    linear-gradient(180deg, rgba(28, 10, 39, 0.96), var(--bg) 38%),
     var(--bg);
   color: var(--text);
 }
@@ -54,8 +54,8 @@ body::before {
   pointer-events: none;
   content: "";
   background-image:
-    linear-gradient(rgba(92, 140, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 140, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(190, 108, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(190, 108, 255, 0.08) 1px, transparent 1px);
   background-position: center;
   background-size: 52px 52px;
   mask-image: linear-gradient(to bottom, black, transparent 78%);
@@ -69,9 +69,9 @@ body::after {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(circle at 74% 16%, rgba(64, 232, 255, 0.13), transparent 30%),
-    radial-gradient(circle at 12% 38%, rgba(164, 108, 255, 0.12), transparent 28%),
-    linear-gradient(135deg, rgba(2, 7, 18, 0), rgba(0, 0, 0, 0.36));
+    radial-gradient(circle at 74% 16%, rgba(255, 107, 214, 0.13), transparent 30%),
+    radial-gradient(circle at 12% 38%, rgba(255, 79, 186, 0.12), transparent 28%),
+    linear-gradient(135deg, rgba(18, 4, 22, 0), rgba(0, 0, 0, 0.36));
 }
 
 a {
@@ -94,7 +94,7 @@ button {
 }
 
 ::selection {
-  background: rgba(64, 232, 255, 0.25);
+  background: rgba(255, 107, 214, 0.25);
   color: var(--text);
 }
 
@@ -106,10 +106,10 @@ button {
 
 .section-band-muted {
   background:
-    linear-gradient(180deg, rgba(9, 14, 29, 0.3), rgba(14, 20, 40, 0.72)),
-    rgba(9, 14, 29, 0.28);
-  border-top: 1px solid rgba(142, 169, 255, 0.08);
-  border-bottom: 1px solid rgba(142, 169, 255, 0.08);
+    linear-gradient(180deg, rgba(24, 8, 33, 0.3), rgba(30, 14, 42, 0.72)),
+    rgba(24, 8, 33, 0.28);
+  border-top: 1px solid rgba(255, 143, 224, 0.08);
+  border-bottom: 1px solid rgba(255, 143, 224, 0.08);
 }
 
 .section-inner {
@@ -144,8 +144,8 @@ button {
   margin: 0 0 16px;
   padding: 5px 10px;
   color: var(--cyan);
-  background: rgba(64, 232, 255, 0.08);
-  border: 1px solid rgba(64, 232, 255, 0.22);
+  background: rgba(255, 107, 214, 0.08);
+  border: 1px solid rgba(255, 107, 214, 0.22);
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 800;
@@ -171,8 +171,8 @@ button {
   width: min(100%, var(--max-width));
   margin: 0 auto;
   padding: 10px;
-  background: rgba(7, 9, 19, 0.78);
-  border: 1px solid rgba(142, 169, 255, 0.18);
+  background: rgba(16, 7, 19, 0.78);
+  border: 1px solid rgba(255, 143, 224, 0.18);
   border-radius: var(--radius);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(18px);
@@ -197,7 +197,7 @@ button {
   padding: 2px;
   background: linear-gradient(135deg, var(--cyan), var(--violet));
   border-radius: 50%;
-  box-shadow: 0 0 22px rgba(64, 232, 255, 0.42);
+  box-shadow: 0 0 22px rgba(255, 107, 214, 0.42);
   transition:
     box-shadow var(--duration) ease,
     transform var(--duration) ease;
@@ -205,8 +205,8 @@ button {
 
 .brand:hover .brand-mark {
   box-shadow:
-    0 0 24px rgba(64, 232, 255, 0.5),
-    0 0 34px rgba(164, 108, 255, 0.18);
+    0 0 24px rgba(255, 107, 214, 0.5),
+    0 0 34px rgba(255, 79, 186, 0.18);
   transform: translateY(-1px);
 }
 
@@ -259,8 +259,8 @@ button {
 .nav-link:hover,
 .nav-link.is-active {
   color: var(--text);
-  background: rgba(92, 140, 255, 0.12);
-  border-color: rgba(92, 140, 255, 0.24);
+  background: rgba(190, 108, 255, 0.12);
+  border-color: rgba(190, 108, 255, 0.24);
 }
 
 .nav-link:hover::after,
@@ -293,12 +293,12 @@ button {
   margin-bottom: 22px;
   padding: 4px;
   background:
-    linear-gradient(135deg, rgba(64, 232, 255, 0.95), rgba(164, 108, 255, 0.92)),
+    linear-gradient(135deg, rgba(255, 107, 214, 0.95), rgba(255, 79, 186, 0.92)),
     rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   box-shadow:
-    0 0 32px rgba(64, 232, 255, 0.32),
-    0 0 56px rgba(164, 108, 255, 0.24);
+    0 0 32px rgba(255, 107, 214, 0.32),
+    0 0 56px rgba(255, 79, 186, 0.24);
   animation: softRise 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
@@ -307,7 +307,7 @@ button {
   inset: -9px;
   z-index: -1;
   content: "";
-  border: 1px solid rgba(64, 232, 255, 0.22);
+  border: 1px solid rgba(255, 107, 214, 0.22);
   border-radius: 50%;
 }
 
@@ -317,7 +317,7 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border: 2px solid rgba(7, 9, 19, 0.8);
+  border: 2px solid rgba(16, 7, 19, 0.8);
   border-radius: 50%;
 }
 
@@ -404,19 +404,19 @@ button {
 }
 
 .button-primary {
-  color: #041018;
+  color: #180617;
   background: linear-gradient(135deg, var(--cyan), var(--blue));
-  box-shadow: 0 12px 34px rgba(64, 232, 255, 0.28);
+  box-shadow: 0 12px 34px rgba(255, 107, 214, 0.28);
 }
 
 .button-secondary {
   color: var(--text);
-  background: rgba(92, 140, 255, 0.13);
-  border-color: rgba(92, 140, 255, 0.32);
+  background: rgba(190, 108, 255, 0.13);
+  border-color: rgba(190, 108, 255, 0.32);
 }
 
 .button-secondary:hover {
-  border-color: rgba(64, 232, 255, 0.6);
+  border-color: rgba(255, 107, 214, 0.6);
   box-shadow: var(--shadow-cyan);
 }
 
@@ -427,8 +427,8 @@ button {
 }
 
 .button-ghost:hover {
-  background: rgba(164, 108, 255, 0.12);
-  border-color: rgba(164, 108, 255, 0.36);
+  background: rgba(255, 79, 186, 0.12);
+  border-color: rgba(255, 79, 186, 0.36);
 }
 
 .button-small {
@@ -459,8 +459,8 @@ button {
   inset: 0;
   opacity: 0.55;
   background-image:
-    linear-gradient(rgba(64, 232, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(164, 108, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 107, 214, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 79, 186, 0.08) 1px, transparent 1px);
   background-size: 78px 78px;
   mask-image: radial-gradient(circle at 72% 44%, black 0%, transparent 58%);
   opacity: 0.55;
@@ -489,8 +489,8 @@ button {
   width: 390px;
   height: 390px;
   background:
-    radial-gradient(circle, rgba(64, 232, 255, 0.36), transparent 48%),
-    radial-gradient(circle, rgba(164, 108, 255, 0.26), transparent 68%);
+    radial-gradient(circle, rgba(255, 107, 214, 0.36), transparent 48%),
+    radial-gradient(circle, rgba(255, 79, 186, 0.26), transparent 68%);
   border-radius: 50%;
   filter: blur(22px);
   transform: translate(-50%, -50%);
@@ -503,13 +503,13 @@ button {
   overflow: hidden;
   background:
     radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.9), transparent 12%),
-    radial-gradient(circle at 50% 55%, rgba(64, 232, 255, 0.94), rgba(92, 140, 255, 0.8) 42%, rgba(164, 108, 255, 0.76) 72%, rgba(4, 11, 28, 0.9));
+    radial-gradient(circle at 50% 55%, rgba(255, 107, 214, 0.94), rgba(190, 108, 255, 0.8) 42%, rgba(255, 79, 186, 0.76) 72%, rgba(24, 6, 30, 0.9));
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   box-shadow:
-    inset 0 -24px 50px rgba(5, 10, 25, 0.46),
-    0 0 40px rgba(64, 232, 255, 0.58),
-    0 0 88px rgba(164, 108, 255, 0.4);
+    inset 0 -24px 50px rgba(20, 5, 26, 0.46),
+    0 0 40px rgba(255, 107, 214, 0.58),
+    0 0 88px rgba(255, 79, 186, 0.4);
   transform: translate(-50%, -50%);
   animation: coreShift 7s ease-in-out infinite;
 }
@@ -532,11 +532,11 @@ button {
 .ring {
   width: 320px;
   height: 320px;
-  border: 2px solid rgba(64, 232, 255, 0.68);
+  border: 2px solid rgba(255, 107, 214, 0.68);
   border-radius: 50%;
   box-shadow:
-    0 0 18px rgba(64, 232, 255, 0.42),
-    inset 0 0 18px rgba(164, 108, 255, 0.22);
+    0 0 18px rgba(255, 107, 214, 0.42),
+    inset 0 0 18px rgba(255, 79, 186, 0.22);
   transform-style: preserve-3d;
 }
 
@@ -549,7 +549,7 @@ button {
 
 .ring::before {
   inset: -5px;
-  border: 1px solid rgba(164, 108, 255, 0.42);
+  border: 1px solid rgba(255, 79, 186, 0.42);
 }
 
 .ring::after {
@@ -558,7 +558,7 @@ button {
   top: 20px;
   left: 50%;
   background: var(--cyan);
-  box-shadow: 0 0 16px rgba(64, 232, 255, 0.82);
+  box-shadow: 0 0 16px rgba(255, 107, 214, 0.82);
 }
 
 .ring-front {
@@ -567,13 +567,13 @@ button {
 }
 
 .ring-horizontal {
-  border-color: rgba(92, 140, 255, 0.72);
+  border-color: rgba(190, 108, 255, 0.72);
   transform: translate(-50%, -50%) rotateX(74deg) rotateZ(18deg);
   animation: ringHorizontal 9s linear infinite;
 }
 
 .ring-diagonal {
-  border-color: rgba(164, 108, 255, 0.74);
+  border-color: rgba(255, 79, 186, 0.74);
   transform: translate(-50%, -50%) rotateX(62deg) rotateY(28deg) rotateZ(-38deg);
   animation: ringDiagonal 13s linear infinite;
 }
@@ -586,9 +586,9 @@ button {
 .particle {
   width: 5px;
   height: 5px;
-  background: rgba(238, 245, 255, 0.9);
+  background: rgba(255, 240, 251, 0.9);
   border-radius: 50%;
-  box-shadow: 0 0 14px rgba(64, 232, 255, 0.85);
+  box-shadow: 0 0 14px rgba(255, 107, 214, 0.85);
   transform: translate(-50%, -50%) translate(var(--x), var(--y));
   animation: particleDrift var(--speed) ease-in-out infinite;
   animation-delay: var(--delay);
@@ -787,7 +787,7 @@ button {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(135deg, rgba(64, 232, 255, 0.12), transparent 36%);
+  background: linear-gradient(135deg, rgba(255, 107, 214, 0.12), transparent 36%);
   opacity: 0;
   transition: opacity var(--duration) ease;
 }
@@ -810,10 +810,10 @@ button {
 }
 
 .project-card:hover {
-  border-color: rgba(64, 232, 255, 0.42);
+  border-color: rgba(255, 107, 214, 0.42);
   box-shadow:
     var(--shadow),
-    0 0 30px rgba(64, 232, 255, 0.12);
+    0 0 30px rgba(255, 107, 214, 0.12);
   transform: translateY(-3px);
 }
 
@@ -842,8 +842,8 @@ button {
   max-width: 140px;
   padding: 5px 8px;
   color: var(--amber);
-  background: rgba(244, 201, 93, 0.09);
-  border: 1px solid rgba(244, 201, 93, 0.22);
+  background: rgba(246, 161, 255, 0.09);
+  border: 1px solid rgba(246, 161, 255, 0.22);
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 850;
@@ -881,8 +881,8 @@ button {
   overflow: hidden;
   padding: 6px 9px;
   color: var(--text-muted);
-  background: rgba(64, 232, 255, 0.07);
-  border: 1px solid rgba(64, 232, 255, 0.14);
+  background: rgba(255, 107, 214, 0.07);
+  border: 1px solid rgba(255, 107, 214, 0.14);
   border-radius: 999px;
   font-size: 0.78rem;
   font-weight: 750;
@@ -894,7 +894,7 @@ button {
 
 .tech-list li:hover {
   color: var(--text);
-  border-color: rgba(64, 232, 255, 0.38);
+  border-color: rgba(255, 107, 214, 0.38);
   transform: translateY(-1px);
 }
 
@@ -943,10 +943,10 @@ button {
 }
 
 .gallery-item:hover {
-  border-color: rgba(64, 232, 255, 0.52);
+  border-color: rgba(255, 107, 214, 0.52);
   box-shadow:
     var(--shadow),
-    0 0 28px rgba(164, 108, 255, 0.14);
+    0 0 28px rgba(255, 79, 186, 0.14);
   transform: translateY(-3px);
 }
 
@@ -956,7 +956,7 @@ button {
   bottom: 12px;
   left: 12px;
   padding: 8px 10px;
-  background: rgba(7, 9, 19, 0.72);
+  background: rgba(16, 7, 19, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
   backdrop-filter: blur(10px);
@@ -1013,8 +1013,8 @@ button {
 
 .skills-section {
   background:
-    radial-gradient(circle at 18% 12%, rgba(64, 232, 255, 0.08), transparent 30%),
-    radial-gradient(circle at 82% 22%, rgba(164, 108, 255, 0.1), transparent 32%);
+    radial-gradient(circle at 18% 12%, rgba(255, 107, 214, 0.08), transparent 30%),
+    radial-gradient(circle at 82% 22%, rgba(255, 79, 186, 0.1), transparent 32%);
 }
 
 .skills-header {
@@ -1042,8 +1042,8 @@ button {
   padding: 16px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.02)),
-    rgba(9, 14, 29, 0.64);
-  border: 1px solid rgba(142, 169, 255, 0.18);
+    rgba(24, 8, 33, 0.64);
+  border: 1px solid rgba(255, 143, 224, 0.18);
   border-radius: var(--radius);
   animation: softRise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
@@ -1055,7 +1055,7 @@ button {
   width: 82px;
   height: 82px;
   content: "";
-  background: radial-gradient(circle, rgba(64, 232, 255, 0.22), transparent 66%);
+  background: radial-gradient(circle, rgba(255, 107, 214, 0.22), transparent 66%);
   border-radius: 50%;
 }
 
@@ -1111,8 +1111,8 @@ button {
   inset: -1px;
   content: "";
   background:
-    radial-gradient(circle at 16% 18%, rgba(64, 232, 255, 0.16), transparent 30%),
-    radial-gradient(circle at 92% 8%, rgba(164, 108, 255, 0.18), transparent 34%);
+    radial-gradient(circle at 16% 18%, rgba(255, 107, 214, 0.16), transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(255, 79, 186, 0.18), transparent 34%);
   opacity: 0.34;
   transition: opacity 220ms ease;
   pointer-events: none;
@@ -1120,12 +1120,12 @@ button {
 
 .skill-card:hover {
   background:
-    linear-gradient(145deg, rgba(64, 232, 255, 0.075), rgba(164, 108, 255, 0.035)),
+    linear-gradient(145deg, rgba(255, 107, 214, 0.075), rgba(255, 79, 186, 0.035)),
     var(--surface);
-  border-color: rgba(64, 232, 255, 0.42);
+  border-color: rgba(255, 107, 214, 0.42);
   box-shadow:
     var(--shadow),
-    0 0 30px rgba(64, 232, 255, 0.12);
+    0 0 30px rgba(255, 107, 214, 0.12);
   transform: translateY(-3px);
 }
 
@@ -1153,8 +1153,8 @@ button {
   height: 38px;
   place-items: center;
   color: var(--cyan);
-  background: rgba(64, 232, 255, 0.08);
-  border: 1px solid rgba(64, 232, 255, 0.2);
+  background: rgba(255, 107, 214, 0.08);
+  border: 1px solid rgba(255, 107, 214, 0.2);
   border-radius: 50%;
   font-size: 0.78rem;
   font-weight: 950;
@@ -1203,16 +1203,16 @@ button {
   inset: 0;
   content: "";
   background:
-    linear-gradient(90deg, rgba(64, 232, 255, 0.16), transparent 42%),
-    radial-gradient(circle at 0% 50%, rgba(164, 108, 255, 0.14), transparent 42%);
+    linear-gradient(90deg, rgba(255, 107, 214, 0.16), transparent 42%),
+    radial-gradient(circle at 0% 50%, rgba(255, 79, 186, 0.14), transparent 42%);
   opacity: 0;
   transition: opacity 180ms ease;
 }
 
 .skill-list li:hover {
   color: var(--text);
-  background: rgba(64, 232, 255, 0.065);
-  border-color: rgba(64, 232, 255, 0.22);
+  background: rgba(255, 107, 214, 0.065);
+  border-color: rgba(255, 107, 214, 0.22);
   transform: translateX(2px);
 }
 
@@ -1261,7 +1261,7 @@ button {
   height: 100%;
   background: linear-gradient(90deg, var(--blue), var(--cyan));
   border-radius: inherit;
-  box-shadow: 0 0 16px rgba(64, 232, 255, 0.28);
+  box-shadow: 0 0 16px rgba(255, 107, 214, 0.28);
   transform-origin: left;
   animation: meterFill 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   animation-delay: calc((var(--skill-card-index) * 70ms) + (var(--skill-index) * 24ms) + 240ms);
@@ -1269,22 +1269,22 @@ button {
 
 .level-learning {
   color: var(--amber);
-  background: rgba(244, 201, 93, 0.1);
+  background: rgba(246, 161, 255, 0.1);
 }
 
 .level-comfortable {
   color: var(--blue);
-  background: rgba(92, 140, 255, 0.11);
+  background: rgba(190, 108, 255, 0.11);
 }
 
 .level-strong {
   color: var(--cyan);
-  background: rgba(64, 232, 255, 0.1);
+  background: rgba(255, 107, 214, 0.1);
 }
 
 .level-advanced {
   color: var(--green);
-  background: rgba(99, 243, 177, 0.1);
+  background: rgba(255, 140, 216, 0.1);
 }
 
 .experience-layout {
@@ -1317,8 +1317,8 @@ button {
 }
 
 .experience-list li:hover {
-  background: rgba(64, 232, 255, 0.055);
-  border-color: rgba(64, 232, 255, 0.3);
+  background: rgba(255, 107, 214, 0.055);
+  border-color: rgba(255, 107, 214, 0.3);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
   transform: translateX(3px);
 }
@@ -1329,8 +1329,8 @@ button {
   height: 42px;
   place-items: center;
   color: var(--cyan);
-  background: rgba(64, 232, 255, 0.08);
-  border: 1px solid rgba(64, 232, 255, 0.2);
+  background: rgba(255, 107, 214, 0.08);
+  border: 1px solid rgba(255, 107, 214, 0.2);
   border-radius: var(--radius);
   font-weight: 900;
 }
@@ -1353,7 +1353,7 @@ button {
 }
 
 .contact-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 520px);
 }
 
 .contact-card {
@@ -1367,10 +1367,10 @@ button {
 }
 
 .contact-card:hover {
-  border-color: rgba(164, 108, 255, 0.42);
+  border-color: rgba(255, 79, 186, 0.42);
   box-shadow:
     var(--shadow),
-    0 0 28px rgba(164, 108, 255, 0.12);
+    0 0 28px rgba(255, 79, 186, 0.12);
   transform: translateY(-3px);
 }
 
@@ -1386,7 +1386,7 @@ button {
 
 .site-footer {
   padding: 26px 24px 34px;
-  border-top: 1px solid rgba(142, 169, 255, 0.1);
+  border-top: 1px solid rgba(255, 143, 224, 0.1);
 }
 
 .footer-inner {

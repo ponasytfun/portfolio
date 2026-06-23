@@ -3,11 +3,10 @@ export default function Experience({ items }) {
     <section className="section-band section-band-muted" id="experience">
       <div className="section-inner experience-layout">
         <div className="section-heading">
-          <p className="eyebrow">What I have done</p>
-          <h2>Experience</h2>
+          <p className="eyebrow">About me</p>
+          <h2>What I Spend Time On</h2>
           <p>
-            Practical development work across plugins, server tooling, debugging, and UI
-            concepts.
+            Some of the things I have worked on and the areas I keep coming back to.
           </p>
         </div>
         <ol className="experience-list">

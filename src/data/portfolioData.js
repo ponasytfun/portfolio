@@ -7,31 +7,30 @@ export const portfolioData = {
     { label: 'Current', href: '#current-roles' },
     { label: 'Past', href: '#past-roles' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Proof', href: '#screenshots' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact Me', href: '#contact' },
   ],
   hero: {
-    badge: 'Minecraft Staff Portfolio',
+    badge: 'About Me Portfolio',
     name: 'Glitch',
-    title: 'Minecraft Developer & Community Manager',
+    title: 'Minecraft Developer & Community Builder',
     profileImage: {
       src: assetPath('profile/glitch-pfp-round.png'),
       alt: 'Glitch profile avatar',
     },
-    subtitle: 'Building servers • Managing communities • Crafting experiences',
+    subtitle: 'Minecraft plugins, server systems, communities, and UI experiments',
     support:
-      'I build and support Minecraft servers, Discord communities, plugin systems, staff teams, events, and server operations with a practical community-first mindset.',
-    primaryAction: { label: 'Join Community', href: '#contact' },
-    secondaryAction: { label: 'View Staff Work', href: '#current-roles' },
+      'This site is a quick look at what I enjoy making, what I am learning, and the server/community projects I like spending time on.',
+    primaryAction: { label: 'Contact Me', href: '#contact' },
+    secondaryAction: { label: 'About Me', href: '#about' },
   },
   about: {
     heading: 'ABOUT ME',
     text:
-      "Hi, I'm Glitch. I am a Minecraft developer and experienced staff member focused on building, managing, and improving online communities. I work with Minecraft servers, Discord communities, plugin systems, staff teams, and server operations.",
+      "Hi, I'm Glitch. I like building Minecraft plugins, server systems, Discord tools, UI experiments, and community features. I have spent time around Prism SMP, Unstable SMP, Vortex SMP, Primal SMP, Anchor SMP, and Reality SMP, mostly focused on custom systems, server operations, staff work, and practical coding projects.",
     stats: [
-      { value: '6+', label: 'Servers Worked With' },
-      { value: '3+', label: 'Years Experience' },
-      { value: '1.21+', label: 'Minecraft Development' },
+      { value: '6+', label: 'Server Projects' },
+      { value: '1.21+', label: 'Minecraft Versions' },
+      { value: 'Java', label: 'Main Plugin Stack' },
     ],
   },
   currentRoles: [
@@ -39,22 +38,22 @@ export const portfolioData = {
       name: 'Prism SMP',
       role: 'Developer',
       description:
-        'Custom gameplay systems, server management, and community features.',
+        'Plugin systems, custom gameplay ideas, server tools, and community-focused features.',
       icon: 'DEV',
       stats: [
-        { label: 'Status', value: 'Active' },
-        { label: 'Members', value: '500+ members' },
+        { label: 'Focus', value: 'Plugins' },
+        { label: 'Style', value: 'Custom systems' },
       ],
     },
     {
       name: 'Unstable SMP',
       role: 'Staff / Developer',
       description:
-        'Staff support, events, server systems, and community management.',
+        'Staff support, server systems, events, and community management work.',
       icon: 'OPS',
       stats: [
-        { label: 'Status', value: 'Active' },
-        { label: 'Members', value: '1k+ members' },
+        { label: 'Focus', value: 'Staff work' },
+        { label: 'Style', value: 'Server ops' },
       ],
     },
   ],
@@ -80,86 +79,51 @@ export const portfolioData = {
       description: 'Server staff experience and community moderation.',
     },
   ],
-  gallery: [
-    {
-      src: assetPath('screenshots/prism-smp-lore.png'),
-      alt: 'Prism SMP lore plugin interface in Minecraft',
-      caption: 'Prism SMP lore plugin UI',
-    },
-    {
-      src: assetPath('screenshots/prism-plugin-ability-visuals-flame-ring.png'),
-      alt: 'Prism plugin flame ability visual in a snowy Minecraft biome',
-      caption: 'Prism plugin ability visuals - flame ring',
-    },
-    {
-      src: assetPath('screenshots/prism-plugin-ability-visuals-snowfield.png'),
-      alt: 'Prism plugin ability visual preview in a snowy Minecraft biome',
-      caption: 'Prism plugin ability visuals - snowfield preview',
-    },
-  ],
-  galleryIntro: {
-    eyebrow: 'Project evidence',
-    heading: 'Screenshots and Systems',
-    text:
-      'Visual proof from plugin work, server systems, and Minecraft development experiments.',
-  },
   specializedSkills: [
     {
-      title: 'Staff Management',
-      description:
-        'Building hierarchies, training moderation teams, and enforcing rules across servers.',
-      label: 'TEAM',
-    },
-    {
-      title: 'Discord Development',
-      description: 'Bot integrations, automations, and server configuration.',
-      label: 'DISC',
-    },
-    {
       title: 'Minecraft Plugin Development',
-      description: 'Custom Java plugin systems, gameplay mechanics, and server tools.',
+      description: 'Java plugin systems, gameplay mechanics, commands, configs, and server tools.',
       label: 'JAVA',
     },
     {
-      title: 'Server Architecture',
-      description: 'Designing channel layouts, permissions, ranks, and staff structures.',
-      label: 'ARCH',
-    },
-    {
-      title: 'Bot Configuration',
-      description: 'Setting up moderation bots, welcome systems, tickets, and automation.',
-      label: 'BOT',
-    },
-    {
-      title: 'Community Building',
-      description:
-        'Growing active communities through events, engagement, and player interaction.',
-      label: 'GROW',
-    },
-    {
-      title: 'MC Server Ops',
-      description:
-        'Managing Survival, Network, and Event servers with plugins at scale.',
+      title: 'Server Operations',
+      description: 'Working with ranks, permissions, staff workflows, events, and server setup.',
       label: 'OPS',
     },
     {
-      title: 'Plugin Configuration',
-      description:
-        'Custom YAML configs for EssentialsX, LuckPerms, TAB, WorldGuard, and other plugins.',
-      label: 'YAML',
+      title: 'Discord Tools',
+      description: 'Bot ideas, moderation workflows, logging, automations, and community setup.',
+      label: 'DISC',
     },
     {
-      title: 'Event Coordination',
-      description: 'Planning and running live community events with real-time logistics.',
-      label: 'LIVE',
+      title: 'Automation Experiments',
+      description: 'Small tools that reduce repetitive work and make testing ideas faster.',
+      label: 'AUTO',
+    },
+    {
+      title: 'UI Experiments',
+      description: 'Dark interfaces, motion, responsive layout, and personal web pages.',
+      label: 'UI',
+    },
+    {
+      title: 'Debugging',
+      description: 'Reading logs, fixing plugin errors, testing changes, and adapting code.',
+      label: 'FIX',
+    },
+    {
+      title: 'Server Hosting',
+      description: 'Hosting basics, server setup, deployment checks, and practical maintenance.',
+      label: 'HOST',
+    },
+    {
+      title: 'Community Building',
+      description: 'Events, player support, staff communication, and keeping servers organized.',
+      label: 'COMM',
     },
   ],
   contact: {
-    heading: 'CONNECT & CONTACT',
-    text: 'Contact me on Discord:',
-    discordUsername: '.glitch',
-    // Placeholder until a real Discord invite is added.
-    communityHref: '#',
-    communityLabel: 'My Community',
+    heading: 'FIND ME ON DISCORD',
+    text: 'Discord is the best way to contact me right now.',
+    discordUsername: 'mr. zap',
   },
 }

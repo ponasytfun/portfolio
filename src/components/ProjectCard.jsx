@@ -1,7 +1,4 @@
 export default function ProjectCard({ index, project }) {
-  const hasScreenshots = Boolean(project.links?.screenshots)
-  const hasCode = Boolean(project.links?.code)
-
   return (
     <article className="project-card" style={{ '--project-index': index }}>
       <div className="card-topline">
@@ -16,27 +13,8 @@ export default function ProjectCard({ index, project }) {
       </ul>
       <div className="card-actions">
         <a className="button button-small button-secondary" href={project.links.details}>
-          View Details
+          Read More
         </a>
-        {hasScreenshots ? (
-          <a className="button button-small button-ghost" href={project.links.screenshots}>
-            Screenshots
-          </a>
-        ) : null}
-        {hasCode ? (
-          <a
-            className="button button-small button-ghost"
-            href={project.links.code}
-            rel="noreferrer"
-            target="_blank"
-          >
-            GitHub
-          </a>
-        ) : (
-          <button className="button button-small button-disabled" disabled type="button">
-            Code soon
-          </button>
-        )}
       </div>
     </article>
   )

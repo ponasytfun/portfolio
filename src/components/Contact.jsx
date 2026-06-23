@@ -17,7 +17,7 @@ export default function Contact({ contact }) {
     <section className="section-band contact-section" id="contact">
       <div className="section-inner contact-inner">
         <div className="section-heading">
-          <p className="eyebrow">Discord first</p>
+          <p className="eyebrow">Contact me</p>
           <h2>{contact.heading}</h2>
           <p>{contact.text}</p>
         </div>
@@ -31,17 +31,6 @@ export default function Contact({ contact }) {
             <span className="button-icon" aria-hidden="true">D</span>
             {copied ? 'Copied username' : contact.discordUsername}
           </button>
-          <a
-            aria-label="Open Glitch community invite"
-            className="button contact-button contact-button-secondary"
-            href={contact.communityHref}
-          >
-            <span className="button-icon" aria-hidden="true">D</span>
-            {contact.communityLabel}
-          </a>
-          <p className="contact-note">
-            The community button is ready for a real Discord invite when one is added.
-          </p>
         </div>
       </div>
     </section>

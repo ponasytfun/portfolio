@@ -1,6 +1,6 @@
 # Glitch Portfolio
 
-A serious developer portfolio for Glitch built with Vite and React. The site focuses on plugins, tools, systems, automation, UI experiments, and practical coding projects.
+A personal about-me portfolio for Glitch built with Vite and React. The site focuses on interests, skills, Minecraft plugin work, server systems, automation, UI experiments, and how to get in contact.
 
 Published site:
 
@@ -10,12 +10,12 @@ https://ponasytfun.github.io/portfolio/
 
 ## Features
 
-- Dark futuristic interface with purple, blue, and cyan accents
+- Dark futuristic interface with purple and pink accents
 - Animated CSS quantum orb with three rotating rings
-- Responsive hero with round profile image, project cards, screenshot gallery, skills, experience, contact, and footer
+- Responsive hero with round profile image, build-interest cards, skills, about/experience notes, contact, and footer
 - Data-driven portfolio text in `src/data/portfolioData.js`
 - Reduced-motion support
-- No paid assets or copyrighted images
+- No paid assets
 - GitHub Pages deployment through GitHub Actions
 - All Rights Reserved license; this is not an open-source project
 
@@ -70,29 +70,12 @@ npm.cmd run lint
 Edit `src/data/portfolioData.js` to update:
 
 - Hero text
-- Projects
-- Gallery items
+- Build-interest cards
 - Skills
 - Experience items
-- Contact placeholders and links
+- Contact text
 
-## Screenshots
-
-Add images to `public/screenshots/`, then add entries to the `gallery` array in `src/data/portfolioData.js`.
-
-The current gallery includes `public/screenshots/prism-smp-lore.png`.
-
-Example:
-
-```js
-gallery: [
-  {
-    src: '/screenshots/plugin-preview.png',
-    alt: 'Plugin interface preview',
-    caption: 'Plugin interface preview',
-  },
-]
-```
+The visible site no longer renders a screenshots/gallery section.
 
 ## Verification
 

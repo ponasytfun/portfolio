@@ -24,6 +24,9 @@
 - Refined the animation system by removing noisy infinite pulses/shimmers, toning down hover movement, and keeping the quantum orb as the main animated visual.
 - Redesigned the skills section with summary tiles, category descriptions, numbered skill panels, and honest level meters.
 - Replaced the sticky skills-card glint sweep with a static ambient glow so mobile hover states do not freeze a vertical highlight.
+- Shifted the site toward an about-me portfolio by removing the rendered screenshots/gallery section and screenshot/code evidence buttons.
+- Updated the visible contact section to only show Discord as `mr. zap`.
+- Updated the color system from blue/cyan-heavy accents to a purple/pink palette.
 - Added accessibility basics including semantic sections, heading order, focus states, disabled placeholder buttons, image alt support, and reduced-motion styles.
 - Added project documentation, audit notes, testing checklist, and handoff message.
 - Added `.gitignore` for dependencies, build output, logs, and generated workspace folders.

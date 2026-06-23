@@ -5,11 +5,11 @@ export default function Projects({ projects }) {
     <section className="section-band" id="projects">
       <div className="section-inner">
         <div className="section-heading">
-          <p className="eyebrow">Selected development work</p>
-          <h2>Projects</h2>
+          <p className="eyebrow">What I like building</p>
+          <h2>Build Interests</h2>
           <p>
-            Plugin and tool projects shaped around practical systems, community workflows,
-            and clean technical execution.
+            A quick overview of the kinds of systems, tools, and experiments I enjoy
+            working on.
           </p>
         </div>
         <div className="project-grid">

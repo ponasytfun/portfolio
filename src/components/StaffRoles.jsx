@@ -31,8 +31,8 @@ export default function StaffRoles({ currentRoles, pastRoles }) {
       <section className="section-band section-band-muted roles-section" id="current-roles">
         <div className="section-inner">
           <div className="section-heading section-heading-centered">
-            <p className="eyebrow">Active work</p>
-            <h2>CURRENT STAFF ROLES</h2>
+            <p className="eyebrow">Current focus</p>
+            <h2>WHAT I AM WORKING ON</h2>
           </div>
           <div className="current-role-grid">
             {currentRoles.map((role, index) => (
@@ -45,8 +45,8 @@ export default function StaffRoles({ currentRoles, pastRoles }) {
       <section className="section-band roles-section" id="past-roles">
         <div className="section-inner">
           <div className="section-heading section-heading-centered">
-            <p className="eyebrow">Previous teams</p>
-            <h2>PAST STAFF ROLES</h2>
+            <p className="eyebrow">Past servers</p>
+            <h2>WHERE I HAVE HELPED</h2>
           </div>
           <div className="past-role-grid">
             {pastRoles.map((role, index) => (
