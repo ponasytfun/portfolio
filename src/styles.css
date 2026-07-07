@@ -802,7 +802,7 @@ button {
   min-height: 330px;
   padding: 24px;
   animation: softRise 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--project-index) * 70ms);
+  animation-delay: var(--project-delay, 0ms);
   transition:
     transform 240ms ease,
     border-color 240ms ease,
@@ -922,7 +922,7 @@ button {
   border-radius: var(--radius);
   cursor: pointer;
   animation: softRise 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--gallery-index) * 80ms);
+  animation-delay: var(--gallery-delay, 0ms);
   transition:
     border-color 240ms ease,
     box-shadow 240ms ease,
@@ -1094,7 +1094,7 @@ button {
   padding: 22px;
   transform-origin: center top;
   animation: softRise 540ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--skill-card-index) * 70ms);
+  animation-delay: var(--skill-card-delay, 0ms);
   transition:
     transform 240ms ease,
     border-color 240ms ease,
@@ -1190,7 +1190,7 @@ button {
   transform: translateY(10px);
   opacity: 0;
   animation: rowFade 380ms ease both;
-  animation-delay: calc((var(--skill-card-index) * 70ms) + (var(--skill-index) * 24ms) + 140ms);
+  animation-delay: var(--skill-row-delay, 140ms);
   transition:
     background var(--duration) ease,
     border-color var(--duration) ease,
@@ -1264,7 +1264,7 @@ button {
   box-shadow: 0 0 16px rgba(255, 107, 214, 0.28);
   transform-origin: left;
   animation: meterFill 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc((var(--skill-card-index) * 70ms) + (var(--skill-index) * 24ms) + 240ms);
+  animation-delay: var(--skill-meter-delay, 240ms);
 }
 
 .level-learning {
@@ -1308,7 +1308,7 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   animation: softSlide 500ms ease both;
-  animation-delay: calc(var(--experience-index) * 70ms);
+  animation-delay: var(--experience-delay, 0ms);
   transition:
     transform 220ms ease,
     border-color 220ms ease,
@@ -1359,7 +1359,7 @@ button {
 .contact-card {
   padding: 22px;
   animation: softRise 540ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  animation-delay: calc(var(--contact-index) * 80ms);
+  animation-delay: var(--contact-delay, 0ms);
   transition:
     transform 230ms ease,
     border-color 230ms ease,

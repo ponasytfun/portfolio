@@ -1,6 +1,9 @@
 export default function ProjectCard({ index, project }) {
   return (
-    <article className="project-card" style={{ '--project-index': index }}>
+    <article
+      className="project-card"
+      style={{ '--project-delay': `${index * 70}ms`, '--project-index': index }}
+    >
       <div className="card-topline">
         <h3>{project.name}</h3>
         <span className="status-badge">{project.status}</span>

@@ -53,7 +53,10 @@ export default function Skills({ skillGroups }) {
             <article
               className="skill-card"
               key={group.title}
-              style={{ '--skill-card-index': groupIndex }}
+              style={{
+                '--skill-card-delay': `${groupIndex * 70}ms`,
+                '--skill-card-index': groupIndex,
+              }}
             >
               <div className="skill-card-top">
                 <span className="skill-card-number">
@@ -70,6 +73,8 @@ export default function Skills({ skillGroups }) {
                   <li
                     key={`${group.title}-${skill.name}`}
                     style={{
+                      '--skill-meter-delay': `${groupIndex * 70 + skillIndex * 24 + 240}ms`,
+                      '--skill-row-delay': `${groupIndex * 70 + skillIndex * 24 + 140}ms`,
                       '--skill-index': skillIndex,
                       '--skill-level': `${levelScore[skill.level]}%`,
                     }}

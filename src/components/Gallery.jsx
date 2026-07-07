@@ -32,7 +32,7 @@ export default function Gallery({ gallery, intro }) {
                 className="gallery-item"
                 key={item.src}
                 onClick={() => setActiveImage(item)}
-                style={{ '--gallery-index': index }}
+                style={{ '--gallery-delay': `${index * 80}ms`, '--gallery-index': index }}
                 type="button"
               >
                 <img alt={item.alt} loading="lazy" src={item.src} />
