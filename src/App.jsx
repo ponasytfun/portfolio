@@ -6,15 +6,18 @@ import StaffRoles from './components/StaffRoles'
 import SpecializedSkills from './components/SpecializedSkills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import useScrollReveal from './hooks/useScrollReveal'
 
 export default function App() {
+  useScrollReveal()
+
   return (
     <>
       <Nav brandImage={portfolioData.hero.profileImage} items={portfolioData.navItems} />
       <main>
         <Hero hero={portfolioData.hero} />
         <About about={portfolioData.about} />
-        <StaffRoles currentRoles={portfolioData.currentRoles} pastRoles={portfolioData.pastRoles} />
+        <StaffRoles featuredRoles={portfolioData.featuredRoles} pastRoles={portfolioData.pastRoles} />
         <SpecializedSkills skills={portfolioData.specializedSkills} />
         <Contact contact={portfolioData.contact} />
       </main>

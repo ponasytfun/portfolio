@@ -1,6 +1,6 @@
 # Glitch Portfolio
 
-A personal about-me portfolio for Glitch built with Vite and React. The site focuses on interests, skills, Minecraft plugin work, server systems, automation, UI experiments, and how to get in contact.
+A personal staff and community portfolio for Glitch built with Vite and React. The site focuses on past Minecraft server staff experience, moderation, player support, server operations, community work, and how to get in contact.
 
 Published site:
 
@@ -12,7 +12,7 @@ https://ponasytfun.github.io/portfolio/
 
 - Dark futuristic interface with purple and pink accents
 - Animated CSS quantum orb with three rotating rings
-- Responsive hero with round profile image, build-interest cards, skills, about/experience notes, contact, and footer
+- Responsive hero with round profile image, staff experience cards, skills, about notes, contact, and footer
 - Data-driven portfolio text in `src/data/portfolioData.js`
 - Reduced-motion support
 - No paid assets
@@ -70,10 +70,29 @@ npm.cmd run lint
 Edit `src/data/portfolioData.js` to update:
 
 - Hero text
-- Build-interest cards
+- Staff experience cards
 - Skills
-- Experience items
+- Server history
 - Contact text
+
+## Lanyard Discord Status
+
+The contact section includes a Lanyard-powered Discord card. To connect it,
+edit `src/data/portfolioData.js` and set:
+
+```js
+contact: {
+  lanyard: {
+    enabled: true,
+    userId: 'YOUR_NUMERIC_DISCORD_USER_ID',
+    kvKeys: ['status', 'role', 'availability', 'location'],
+  },
+}
+```
+
+The portfolio only reads public data from
+`https://api.lanyard.rest/v1/users/:user_id`. Keep the Lanyard API key out of
+frontend code; use it only privately to update KV values.
 
 The visible site no longer renders a screenshots/gallery section.
 

@@ -13,9 +13,9 @@ const levelScore = {
 }
 
 const featuredSkills = [
-  { label: 'Core stack', value: 'Java + Paper API' },
-  { label: 'Best area', value: 'Minecraft systems' },
-  { label: 'Workflow', value: 'Maven, Git, hosting' },
+  { label: 'Main focus', value: 'Community ops' },
+  { label: 'Best area', value: 'Player support' },
+  { label: 'Support skill', value: 'Configs + logs' },
 ]
 
 export default function Skills({ skillGroups }) {
@@ -27,10 +27,10 @@ export default function Skills({ skillGroups }) {
         <div className="skills-header">
           <div className="section-heading">
             <p className="eyebrow">Skills I am actively building</p>
-            <h2>Technical Stack</h2>
+            <h2>Community Skills</h2>
             <p>
-              A clearer look at the languages, tools, and workflows behind the plugin
-              systems, server work, automation ideas, and UI experiments.
+              A clearer look at the staff workflows, moderation habits, server
+              operations, and technical basics behind my community support work.
             </p>
           </div>
 

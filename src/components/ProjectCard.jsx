@@ -6,7 +6,7 @@ export default function ProjectCard({ index, project }) {
         <span className="status-badge">{project.status}</span>
       </div>
       <p>{project.description}</p>
-      <ul className="tech-list" aria-label={`${project.name} technologies`}>
+      <ul className="tech-list" aria-label={`${project.name} details`}>
         {project.tech.map((tech) => (
           <li key={tech}>{tech}</li>
         ))}

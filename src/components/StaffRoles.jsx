@@ -1,6 +1,10 @@
 function RoleCard({ index, role, tone }) {
   return (
-    <article className={`role-card role-card-${tone}`} style={{ '--role-index': index }}>
+    <article
+      className={`role-card role-card-${tone}`}
+      data-reveal="card"
+      style={{ '--role-index': index, '--reveal-index': index }}
+    >
       <div className="role-card-header">
         <span className="role-icon" aria-hidden="true">
           {role.icon ?? 'STAFF'}
@@ -25,18 +29,18 @@ function RoleCard({ index, role, tone }) {
   )
 }
 
-export default function StaffRoles({ currentRoles, pastRoles }) {
+export default function StaffRoles({ featuredRoles, pastRoles }) {
   return (
     <>
-      <section className="section-band section-band-muted roles-section" id="current-roles">
+      <section className="section-band section-band-muted roles-section" id="staff-experience">
         <div className="section-inner">
-          <div className="section-heading section-heading-centered">
-            <p className="eyebrow">Current focus</p>
-            <h2>WHAT I AM WORKING ON</h2>
+          <div className="section-heading section-heading-centered" data-reveal="slide">
+            <p className="eyebrow">Experience highlights</p>
+            <h2>PAST STAFF WORK</h2>
           </div>
-          <div className="current-role-grid">
-            {currentRoles.map((role, index) => (
-              <RoleCard index={index} key={role.name} role={role} tone="current" />
+          <div className="featured-role-grid">
+            {featuredRoles.map((role, index) => (
+              <RoleCard index={index} key={role.name} role={role} tone="featured" />
             ))}
           </div>
         </div>
@@ -44,9 +48,9 @@ export default function StaffRoles({ currentRoles, pastRoles }) {
 
       <section className="section-band roles-section" id="past-roles">
         <div className="section-inner">
-          <div className="section-heading section-heading-centered">
-            <p className="eyebrow">Past servers</p>
-            <h2>WHERE I HAVE HELPED</h2>
+          <div className="section-heading section-heading-centered" data-reveal="slide">
+            <p className="eyebrow">More past servers</p>
+            <h2>OTHER COMMUNITIES I SUPPORTED</h2>
           </div>
           <div className="past-role-grid">
             {pastRoles.map((role, index) => (
