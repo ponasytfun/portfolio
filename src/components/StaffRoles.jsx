@@ -35,10 +35,10 @@ export default function StaffRoles({ featuredRoles, pastRoles }) {
       <section className="section-band section-band-muted roles-section" id="staff-experience">
         <div className="section-inner">
           <div className="section-heading section-heading-centered" data-reveal="slide">
-            <p className="eyebrow">Experience highlights</p>
-            <h2>PAST STAFF WORK</h2>
+            <p className="eyebrow">Current role</p>
+            <h2>CURRENT EXPERIENCE</h2>
           </div>
-          <div className="featured-role-grid">
+          <div className={featuredRoles.length === 1 ? 'featured-role-grid featured-role-grid-single' : 'featured-role-grid'}>
             {featuredRoles.map((role, index) => (
               <RoleCard index={index} key={role.name} role={role} tone="featured" />
             ))}
@@ -49,8 +49,8 @@ export default function StaffRoles({ featuredRoles, pastRoles }) {
       <section className="section-band roles-section" id="past-roles">
         <div className="section-inner">
           <div className="section-heading section-heading-centered" data-reveal="slide">
-            <p className="eyebrow">More past servers</p>
-            <h2>OTHER COMMUNITIES I SUPPORTED</h2>
+            <p className="eyebrow">Past experience</p>
+            <h2>PAST SERVER EXPERIENCE</h2>
           </div>
           <div className="past-role-grid">
             {pastRoles.map((role, index) => (
