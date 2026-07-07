@@ -10,6 +10,7 @@ const particles = Array.from({ length: 30 }, (_, index) => {
       '--particle-x': `${x}%`,
       '--particle-y': `${y}%`,
       '--particle-drift': `${drift}px`,
+      '--particle-drift-y': `${drift * -1}px`,
       '--particle-duration': `${duration}s`,
       '--particle-delay': `${index * -0.42}s`,
     },

@@ -17,9 +17,10 @@ export const portfolioData = {
       src: assetPath('profile/glitch-pfp-round.png'),
       alt: 'Glitch profile avatar',
     },
-    subtitle: 'Current Shield Development manager with past Minecraft server staff and community operations experience',
+    subtitle:
+      'Manager at Shield Development with experience in Minecraft server leadership, community operations, staff coordination, and technical systems.',
     support:
-      'A focused look at the Minecraft communities I have supported, the staff responsibilities I have handled, and the technical understanding I bring when a server needs practical help.',
+      'A focused look at the communities I have managed, the staff responsibilities I have handled, and the technical systems I understand when a server needs practical help.',
     primaryAction: { label: 'Contact Me', href: '#contact' },
     secondaryAction: { label: 'Staff Experience', href: '#staff-experience' },
   },
@@ -29,7 +30,7 @@ export const portfolioData = {
       "Hi, I'm Glitch. I currently work as a Manager at Shield Development, a 650+ member community. I also have past experience helping Minecraft communities through ownership, management, moderation, community operations, server organization, player support, and technical support when needed. I previously supported Prism SMP, Unstable SMP, Vortex SMP, Primal SMP, Anchor SMP, and Reality SMP, with a focus on keeping communities fair, active, organized, and clear for players.",
     stats: [
       { value: '650+', label: 'Current Community' },
-      { value: '12K+', label: 'Past Community Reach' },
+      { value: '12K+', label: 'Combined Community Size' },
       { value: 'Manager', label: 'Current Role' },
     ],
   },
@@ -38,7 +39,7 @@ export const portfolioData = {
       name: 'Shield Development',
       role: 'Current Manager',
       description:
-        'Currently managing Shield Development, supporting staff coordination, community operations, member support, and organized server workflows.',
+        'Managing Shield Development with a focus on staff coordination, member support, internal organization, and reliable community workflows.',
       icon: '650+',
       stats: [
         { label: 'Community', value: '650+ members' },
@@ -50,7 +51,8 @@ export const portfolioData = {
     {
       name: 'Vortex SMP',
       role: 'Former Owner',
-      description: 'Owned and helped run Vortex SMP, covering server direction, staff decisions, community standards, and player-facing support.',
+      description:
+        'Owned Vortex SMP and handled high-level direction, community standards, staff decisions, and the server expectations players followed.',
       stats: [
         { label: 'Community', value: '2K+ members' },
         { label: 'Focus', value: 'Ownership' },
@@ -60,7 +62,7 @@ export const portfolioData = {
       name: 'Prism SMP',
       role: 'Former Co-Owner',
       description:
-        'Previously helped lead Prism SMP as co-owner, supporting staff coordination, player communication, server organization, and practical technical support.',
+        'Co-led Prism SMP with a focus on staff communication, player-facing updates, server organization, and practical technical coordination.',
       stats: [
         { label: 'Community', value: '1K+ members' },
         { label: 'Focus', value: 'Leadership & ops' },
@@ -70,7 +72,7 @@ export const portfolioData = {
       name: 'Unstable SMP',
       role: 'Former Manager',
       description:
-        'Managed staff-side community work for Unstable SMP, including event support, moderation workflows, player issues, and day-to-day server operations.',
+        'Managed day-to-day staff work in a larger SMP environment, including moderation workflows, events, player escalations, and operational follow-through.',
       stats: [
         { label: 'Community', value: '6K+ members' },
         { label: 'Focus', value: 'Staff coordination' },
@@ -79,7 +81,8 @@ export const portfolioData = {
     {
       name: 'Primal SMP',
       role: 'Former Manager',
-      description: 'Managed Primal SMP and supported community operations, server organization, moderation expectations, staff coordination, and player activity.',
+      description:
+        'Managed Primal SMP by keeping moderation expectations clear, organizing staff work, and helping maintain player activity and server order.',
       stats: [
         { label: 'Community', value: '500+ members' },
         { label: 'Focus', value: 'Management' },
@@ -88,7 +91,8 @@ export const portfolioData = {
     {
       name: 'Anchor SMP',
       role: 'Former Manager',
-      description: 'Managed Anchor SMP staff coordination and community support, helping with player communication, organization, and moderation flow.',
+      description:
+        'Coordinated Anchor SMP staff communication, internal organization, player-facing support, and the moderation flow around routine issues.',
       stats: [
         { label: 'Community', value: '2K+ members' },
         { label: 'Focus', value: 'Staff management' },
@@ -97,7 +101,8 @@ export const portfolioData = {
     {
       name: 'Reality SMP',
       role: 'Former Staff Member',
-      description: 'Supported Reality SMP with community moderation, rule enforcement, player support, and staff-side organization.',
+      description:
+        'Handled Reality SMP staff duties around reports, rule enforcement, moderation consistency, and direct player support.',
       stats: [
         { label: 'Community', value: '700+ members' },
         { label: 'Focus', value: 'Staff support' },
@@ -121,8 +126,9 @@ export const portfolioData = {
       label: 'OPS',
     },
     {
-      title: 'Discord Management',
-      description: 'Moderation channels, announcements, report workflows, and community structure.',
+      title: 'Discord Operations',
+      description:
+        'Role architecture, moderation workflows, staff channels, announcements, verification systems, bot integrations, and community structure.',
       label: 'DISC',
     },
     {
@@ -136,20 +142,26 @@ export const portfolioData = {
       label: 'HELP',
     },
     {
-      title: 'Minecraft Technical Knowledge',
-      description: 'Reading logs, checking configs, understanding permissions, and testing changes when needed.',
+      title: 'Minecraft Plugin & Backend Development',
+      description:
+        'Java, Paper API, custom gameplay systems, server integrations, webhooks, configuration design, debugging, and operational tooling.',
       label: 'TECH',
     },
     {
-      title: 'Plugin / Config Understanding',
-      description: 'Basic Java, Paper, and config knowledge used as a support skill for staff operations.',
+      title: 'Server Tooling & Integrations',
+      description:
+        'Persistent player data, GUI systems, Discord integrations, staff panels, Vercel-based tools, authenticated plugin webhooks, and backend APIs.',
       label: 'CFG',
     },
   ],
   contact: {
     heading: 'REACH OUT ON DISCORD',
-    text: 'Reach out for Minecraft staff, community support, server operations, moderation-related work, or questions about past server experience.',
+    text: 'Reach out for Minecraft staff work, community management, server operations, technical systems, moderation workflows, or questions about past server experience.',
     discordUsername: 'mr. zap',
+    profileImage: {
+      src: assetPath('profile/glitch-pfp.png'),
+      alt: 'Glitch profile avatar',
+    },
     lanyard: {
       enabled: true,
       userId: '609018871264968710',

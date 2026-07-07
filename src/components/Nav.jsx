@@ -13,6 +13,7 @@ export default function Nav({ brandImage, items }) {
   }
 
   useEffect(() => {
+    let scrollFrame
     const sectionIds = items
       .map((item) => item.href.replace('#', ''))
       .filter(Boolean)
@@ -29,7 +30,10 @@ export default function Nav({ brandImage, items }) {
       }
     }
 
-    const scheduleHandleScroll = () => window.requestAnimationFrame(handleScroll)
+    const scheduleHandleScroll = () => {
+      window.cancelAnimationFrame(scrollFrame)
+      scrollFrame = window.requestAnimationFrame(handleScroll)
+    }
 
     handleScroll()
     const initialAnchorCheck = window.setTimeout(handleScroll, 250)
@@ -39,6 +43,7 @@ export default function Nav({ brandImage, items }) {
     return () => {
       window.clearTimeout(initialAnchorCheck)
       window.clearTimeout(sectionJumpTimer.current)
+      window.cancelAnimationFrame(scrollFrame)
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('hashchange', scheduleHandleScroll)
     }

@@ -3,7 +3,13 @@ function RoleCard({ index, role, tone }) {
     <article
       className={`role-card role-card-${tone}`}
       data-reveal="card"
-      style={{ '--role-index': index, '--reveal-index': index }}
+      style={{
+        '--reveal-delay': `${index * 75}ms`,
+        '--role-delay': `${index * 90}ms`,
+        '--role-index': index,
+        '--role-stat-delay-primary': `${index * 70 + 180}ms`,
+        '--role-stat-delay-secondary': `${index * 70 + 250}ms`,
+      }}
     >
       <div className="role-card-header">
         <span className="role-icon" aria-hidden="true">

@@ -12,7 +12,12 @@ export default function SpecializedSkills({ skills }) {
               className="specialized-card"
               data-reveal="card"
               key={skill.title}
-              style={{ '--skill-index': index, '--reveal-index': index }}
+              style={{
+                '--reveal-delay': `${index * 75}ms`,
+                '--skill-delay': `${index * 90}ms`,
+                '--skill-index': index,
+                '--skill-mark-delay': `${index * 60 + 120}ms`,
+              }}
             >
               <span className="skill-mark" aria-hidden="true">
                 {skill.label}

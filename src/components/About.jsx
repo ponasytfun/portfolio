@@ -14,7 +14,11 @@ export default function About({ about }) {
               className="stat-card"
               data-reveal="card"
               key={stat.label}
-              style={{ '--stat-index': index, '--reveal-index': index }}
+              style={{
+                '--reveal-delay': `${index * 75}ms`,
+                '--stat-delay': `${index * 90}ms`,
+                '--stat-index': index,
+              }}
             >
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
