@@ -3102,3 +3102,365 @@ html.section-jump-active .nav-shell {
     transition-duration: 1ms !important;
   }
 }
+
+/* Minimal profile redesign inspired by the Caleb reference. */
+body {
+  background: #07040a;
+}
+
+body::before {
+  z-index: -3;
+  opacity: 0.34;
+  background:
+    linear-gradient(180deg, rgba(7, 4, 10, 0.18), rgba(7, 4, 10, 0.78) 64%, rgba(7, 4, 10, 0.94)),
+    url("/portfolio/backgrounds/discord-hero-bg.jpg") center / cover fixed;
+  mask-image: none;
+  animation: none;
+}
+
+body::after {
+  z-index: -2;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(255, 95, 210, 0.12), transparent 34rem),
+    linear-gradient(180deg, rgba(7, 4, 10, 0.16), rgba(7, 4, 10, 0.56) 46%, rgba(7, 4, 10, 0.82));
+  animation: none;
+}
+
+.discord-hero {
+  min-height: 100svh;
+  padding: 96px 20px 62px;
+  background: transparent;
+}
+
+.discord-hero-bg {
+  background-position: center bottom;
+  transform: translate3d(var(--discord-bg-x), calc(var(--discord-bg-y) + var(--discord-scroll-y)), 0) scale(1.08);
+  filter: saturate(1.02) contrast(1.02);
+  opacity: 1;
+}
+
+.discord-hero-ambient {
+  background:
+    linear-gradient(180deg, rgba(7, 4, 10, 0.12), rgba(7, 4, 10, 0.22) 48%, rgba(7, 4, 10, 0.5)),
+    radial-gradient(circle at 50% 38%, rgba(255, 95, 210, 0.08), transparent 28rem);
+}
+
+.discord-hero-grid,
+.discord-hero-scan,
+.discord-hero-particles,
+.discord-avatar-orbit {
+  opacity: 0.18;
+}
+
+.discord-hero-grid {
+  mask-image: radial-gradient(circle at 50% 45%, black 0%, transparent 58%);
+}
+
+.discord-hero-content {
+  width: min(100%, 820px);
+}
+
+.discord-live-label {
+  min-height: 30px;
+  padding: 7px 12px;
+  background: rgba(12, 8, 18, 0.42);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+  font-size: 0.7rem;
+}
+
+.discord-avatar-stage {
+  width: clamp(116px, 16vw, 154px);
+  height: clamp(116px, 16vw, 154px);
+  margin: 18px 0 12px;
+}
+
+.discord-avatar-frame {
+  width: clamp(96px, 12vw, 128px);
+  height: clamp(96px, 12vw, 128px);
+  padding: 4px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 95, 210, 0.64)),
+    rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 18px 62px rgba(0, 0, 0, 0.48),
+    0 0 34px rgba(255, 95, 210, 0.18);
+}
+
+.discord-avatar-frame::before {
+  opacity: 0.48;
+}
+
+.discord-hero-kicker,
+.discord-hero-location,
+.discord-hero-intro,
+.discord-hero-live-name {
+  margin: 0;
+}
+
+.discord-hero-kicker {
+  color: rgba(255, 240, 251, 0.82);
+  font-size: clamp(1rem, 2vw, 1.28rem);
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.discord-identity h1 {
+  margin-top: 6px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffe5f9 52%, #dcaef1 100%);
+  background-clip: text;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  letter-spacing: 0;
+  text-shadow: 0 22px 70px rgba(0, 0, 0, 0.36);
+}
+
+.discord-hero-location {
+  margin-top: 8px;
+  color: rgba(255, 240, 251, 0.72);
+  font-size: 0.98rem;
+  font-weight: 760;
+}
+
+.discord-hero-intro {
+  max-width: 700px;
+  margin: 10px auto 0;
+  color: rgba(255, 240, 251, 0.78);
+  font-size: clamp(1rem, 2vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.discord-hero-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin-top: 10px;
+  padding: 7px 12px;
+  background: rgba(12, 8, 18, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  font-size: 0.94rem;
+}
+
+.discord-hero-live-name {
+  margin-top: 7px;
+  color: rgba(255, 240, 251, 0.58);
+  font-size: 0.88rem;
+  font-weight: 760;
+}
+
+.discord-social-row,
+.social-link-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.discord-social-row {
+  margin-top: 12px;
+}
+
+.discord-social-link,
+.social-link-card {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 9px 13px;
+  color: rgba(255, 240, 251, 0.9);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+  font-size: 0.88rem;
+  font-weight: 850;
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.discord-social-link span,
+.social-link-icon {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  color: #fff;
+  background: rgba(255, 95, 210, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.discord-social-link:hover,
+.social-link-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.24),
+    0 0 28px rgba(255, 95, 210, 0.12);
+  transform: translateY(-2px);
+}
+
+.discord-social-link.is-placeholder,
+.social-link-card.is-placeholder {
+  color: rgba(255, 240, 251, 0.56);
+}
+
+.discord-hero-data {
+  display: none;
+}
+
+.discord-hero-data div {
+  padding: 11px 12px;
+  background: rgba(12, 8, 18, 0.36);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
+.discord-scroll-cue {
+  bottom: 8px;
+}
+
+.discord-scroll-cue span {
+  display: none;
+}
+
+.discord-scroll-cue i {
+  height: 28px;
+}
+
+.section-band {
+  min-height: 92svh;
+  background:
+    linear-gradient(180deg, rgba(7, 4, 10, 0.46), rgba(7, 4, 10, 0.68)),
+    rgba(7, 4, 10, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.section-band-muted {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.015)),
+    rgba(7, 4, 10, 0.46);
+}
+
+.section-band::before {
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255, 95, 210, 0.07), transparent 25rem),
+    linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.035), transparent);
+}
+
+.hero-section .quantum-field {
+  opacity: 0.28;
+}
+
+.hero-copy,
+.section-heading,
+.stat-card,
+.role-card,
+.specialized-card,
+.contact-panel,
+.lanyard-card {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.026)),
+    rgba(12, 8, 18, 0.56);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+}
+
+.hero-copy,
+.section-heading {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+}
+
+.section-heading-centered {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.stat-card:hover,
+.role-card:hover,
+.specialized-card:hover,
+.lanyard-card:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 26px 84px rgba(0, 0, 0, 0.34),
+    0 0 30px rgba(255, 95, 210, 0.12);
+}
+
+.contact-actions-panel {
+  width: min(100%, 760px);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.social-link-grid {
+  margin-bottom: 14px;
+}
+
+.social-link-card {
+  flex: 1 1 180px;
+  justify-content: flex-start;
+  min-height: 64px;
+  text-align: left;
+}
+
+.social-link-card strong,
+.social-link-card small {
+  display: block;
+}
+
+.social-link-card small {
+  margin-top: 3px;
+  color: rgba(255, 240, 251, 0.58);
+  font-size: 0.78rem;
+  font-weight: 720;
+}
+
+@media (max-width: 680px) {
+  body::before {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  .discord-hero {
+    padding-top: 110px;
+  }
+
+  .discord-hero-bg {
+    background-position: center bottom;
+    transform: translate3d(var(--discord-bg-x), calc(var(--discord-bg-y) + var(--discord-scroll-y)), 0) scale(1.2);
+  }
+
+  .discord-identity h1 {
+    font-size: clamp(3.2rem, 20vw, 5.2rem);
+  }
+
+  .discord-hero-intro {
+    font-size: 0.96rem;
+  }
+
+  .discord-hero-data {
+    display: none;
+  }
+
+  .hero-copy,
+  .section-heading {
+    padding: 18px;
+  }
+}

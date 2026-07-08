@@ -20,6 +20,8 @@ export default function DiscordHero({ contact, discordHero }) {
   )
 
   const displayName = discordHero.displayName
+  const user = data?.discord_user
+  const liveDisplayName = user?.global_name || user?.display_name || displayName
   const activityDetails = getActivityDetails(data)
   const presenceView = getPresenceView({
     data,
@@ -184,10 +186,28 @@ export default function DiscordHero({ contact, discordHero }) {
         </div>
 
         <div className="discord-identity">
+          <p className="discord-hero-kicker">{discordHero.kicker}</p>
           <h1>{displayName}</h1>
+          <p className="discord-hero-location">{discordHero.location}</p>
+          <p className="discord-hero-intro">{discordHero.intro}</p>
           <p className="discord-hero-status" key={presenceView.statusText} aria-live="polite">
             {presenceView.statusText}
           </p>
+          <p className="discord-hero-live-name">Live as {liveDisplayName}</p>
+          <div className="discord-social-row" aria-label="Social links">
+            {(contact.socials ?? []).map((social) => (
+              <a
+                className={social.placeholder ? 'discord-social-link is-placeholder' : 'discord-social-link'}
+                href={social.href}
+                key={social.label}
+                rel="noreferrer"
+                target={social.href?.startsWith('http') ? '_blank' : undefined}
+              >
+                <span aria-hidden="true">{social.icon}</span>
+                {social.label}
+              </a>
+            ))}
+          </div>
         </div>
 
         <dl className="discord-hero-data" aria-label="Live Discord details">

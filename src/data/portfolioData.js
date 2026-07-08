@@ -27,6 +27,10 @@ export const portfolioData = {
   discordHero: {
     displayName: 'Glitch',
     label: 'LIVE DISCORD',
+    kicker: 'Minecraft Staff & Community Manager',
+    location: 'Discord & Minecraft communities',
+    intro:
+      'I manage communities, coordinate staff teams, support players, and keep server operations clean, calm, and organized.',
     scrollLabel: 'Explore Portfolio',
     scrollTarget: '#portfolio-intro',
     backgroundImage: {
@@ -168,6 +172,28 @@ export const portfolioData = {
     heading: 'REACH OUT ON DISCORD',
     text: 'Reach out for Minecraft staff work, community management, server operations, technical systems, moderation workflows, or questions about past server experience.',
     discordUsername: 'mr. zap',
+    socials: [
+      {
+        label: 'Discord',
+        handle: 'Glitch',
+        href: 'https://discord.com/users/609018871264968710',
+        icon: 'D',
+      },
+      {
+        label: 'TikTok',
+        handle: 'Add your TikTok link',
+        href: '#contact',
+        icon: 'T',
+        placeholder: true,
+      },
+      {
+        label: 'YouTube',
+        handle: 'Add your YouTube link',
+        href: '#contact',
+        icon: 'Y',
+        placeholder: true,
+      },
+    ],
     profileImage: {
       src: assetPath('profile/glitch-pfp.png'),
       alt: 'Glitch profile avatar',

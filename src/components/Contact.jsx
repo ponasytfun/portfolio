@@ -29,6 +29,23 @@ export default function Contact({ contact }) {
         </div>
 
         <div className="contact-panel contact-actions-panel" data-reveal="card">
+          <div className="social-link-grid" aria-label="Social links">
+            {(contact.socials ?? []).map((social) => (
+              <a
+                className={social.placeholder ? 'social-link-card is-placeholder' : 'social-link-card'}
+                href={social.href}
+                key={social.label}
+                rel="noreferrer"
+                target={social.href?.startsWith('http') ? '_blank' : undefined}
+              >
+                <span className="social-link-icon" aria-hidden="true">{social.icon}</span>
+                <span>
+                  <strong>{social.label}</strong>
+                  <small>{social.handle}</small>
+                </span>
+              </a>
+            ))}
+          </div>
           <button
             aria-label={`Copy Discord username ${contact.discordUsername}`}
             className="button contact-button"
