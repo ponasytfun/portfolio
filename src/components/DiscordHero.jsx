@@ -19,7 +19,7 @@ export default function DiscordHero({ contact, discordHero }) {
     contact.lanyard?.pollIntervalMs,
   )
 
-  const displayName = contact.discordUsername
+  const displayName = discordHero.displayName
   const activityDetails = getActivityDetails(data)
   const presenceView = getPresenceView({
     data,

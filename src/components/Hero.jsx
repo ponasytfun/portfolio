@@ -5,7 +5,7 @@ export default function Hero({ hero }) {
     <section className="hero-section section-band" id="portfolio-intro">
       <QuantumOrb />
       <div className="section-inner hero-inner">
-        <div className="hero-copy" data-reveal="mask">
+        <div className="hero-copy" data-reveal="slide">
           <div className="profile-frame">
             <img alt={hero.profileImage.alt} src={hero.profileImage.src} />
             <span className="online-dot" aria-label="Online" />

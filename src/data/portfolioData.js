@@ -25,6 +25,7 @@ export const portfolioData = {
     secondaryAction: { label: 'Staff Experience', href: '#staff-experience' },
   },
   discordHero: {
+    displayName: 'Glitch',
     label: 'LIVE DISCORD',
     scrollLabel: 'Explore Portfolio',
     scrollTarget: '#portfolio-intro',

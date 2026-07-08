@@ -4,10 +4,11 @@ export default function useScrollReveal() {
   useEffect(() => {
     const root = document.documentElement
     const targets = Array.from(document.querySelectorAll('[data-reveal]'))
+    const sections = Array.from(document.querySelectorAll('main > section, .site-footer'))
 
     root.classList.add('reveal-ready')
 
-    if (!targets.length) {
+    if (!targets.length && !sections.length) {
       return undefined
     }
 
@@ -27,6 +28,9 @@ export default function useScrollReveal() {
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
       targets.forEach((target) => target.classList.add('is-visible'))
+      sections.forEach((section) => {
+        section.classList.add('is-section-active', 'section-has-entered')
+      })
       return undefined
     }
 
@@ -51,8 +55,46 @@ export default function useScrollReveal() {
       revealObserver.observe(target)
     })
 
+    const markInitialActiveSections = () => {
+      const activationTop = window.innerHeight * 0.18
+      const activationBottom = window.innerHeight * 0.72
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+
+        if (rect.top <= activationBottom && rect.bottom >= activationTop) {
+          section.classList.add('is-section-active', 'section-has-entered')
+        }
+      })
+    }
+
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-section-active', 'section-has-entered')
+            return
+          }
+
+          entry.target.classList.remove('is-section-active')
+        })
+      },
+      {
+        rootMargin: '0px',
+        threshold: 0.32,
+      },
+    )
+
+    sections.forEach((section) => {
+      sectionObserver.observe(section)
+    })
+
+    const initialSectionFrame = window.requestAnimationFrame(markInitialActiveSections)
+
     return () => {
+      window.cancelAnimationFrame(initialSectionFrame)
       revealObserver.disconnect()
+      sectionObserver.disconnect()
     }
   }, [])
 }

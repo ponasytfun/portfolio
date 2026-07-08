@@ -31,6 +31,28 @@ body {
     linear-gradient(180deg, #120716 0%, #09040c 42%, #170b20 100%);
 }
 
+html {
+  scroll-padding-top: 92px;
+}
+
+main > section,
+.site-footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media (min-width: 900px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+@media (max-width: 899px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+}
+
 body::before {
   opacity: 0.42;
   background-image:
@@ -534,11 +556,11 @@ body.portfolio-loader-lock {
   --discord-tilt-x: 0deg;
   --discord-tilt-y: 0deg;
   position: relative;
-  min-height: 92svh;
+  min-height: 100svh;
   display: grid;
   place-items: center;
   overflow: hidden;
-  padding: 118px 22px 74px;
+  padding: 118px 22px 88px;
   isolation: isolate;
   background: #07020a;
 }
@@ -556,9 +578,9 @@ body.portfolio-loader-lock {
 .discord-hero-bg {
   z-index: -5;
   background-image: var(--discord-hero-bg);
-  background-position: center;
+  background-position: center 52%;
   background-size: cover;
-  transform: translate3d(var(--discord-bg-x), calc(var(--discord-bg-y) + var(--discord-scroll-y)), 0) scale(1.045);
+  transform: translate3d(var(--discord-bg-x), calc(var(--discord-bg-y) + var(--discord-scroll-y)), 0) scale(1.12);
   filter: saturate(1.04) contrast(1.04);
   animation: discordBgBreath 18s ease-in-out infinite alternate;
   will-change: transform;
@@ -570,7 +592,7 @@ body.portfolio-loader-lock {
     radial-gradient(circle at 50% 28%, rgba(255, 95, 210, 0.1), transparent 28rem),
     radial-gradient(circle at 22% 78%, rgba(112, 47, 255, 0.17), transparent 24rem),
     linear-gradient(90deg, rgba(4, 1, 8, 0.58), transparent 24%, transparent 76%, rgba(4, 1, 8, 0.58)),
-    linear-gradient(180deg, rgba(5, 2, 7, 0.16), rgba(5, 2, 7, 0.42) 78%, #09040c 100%);
+    linear-gradient(180deg, rgba(5, 2, 7, 0.12), rgba(5, 2, 7, 0.34) 78%, rgba(5, 2, 7, 0.18) 100%);
   animation: discordAmbientSweep 12s ease-in-out infinite alternate;
 }
 
@@ -924,8 +946,73 @@ body.portfolio-loader-lock {
 }
 
 .section-band {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
   padding: 104px 22px;
   scroll-margin-top: 96px;
+}
+
+.section-band::before,
+.section-band::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.section-band::before {
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255, 95, 210, 0.11), transparent 28rem),
+    linear-gradient(115deg, transparent, rgba(255, 95, 210, 0.055), transparent);
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  transition:
+    opacity 720ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.section-band::after {
+  top: 0;
+  right: max(22px, calc((100vw - var(--max-width)) / 2));
+  left: max(22px, calc((100vw - var(--max-width)) / 2));
+  z-index: 2;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 214, 246, 0.72), transparent);
+  opacity: 0;
+  transform: scaleX(0);
+  transition:
+    opacity 520ms ease,
+    transform 820ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.section-band.is-section-active::before {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.section-band.is-section-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.section-band.is-section-active .section-heading h2 {
+  animation: sectionHeadingWake 780ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.section-band.is-section-active .eyebrow {
+  animation: sectionEyebrowWake 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.discord-hero.is-section-active .discord-hero-grid {
+  opacity: 0.62;
+}
+
+.discord-hero.is-section-active .discord-hero-bg {
+  filter: saturate(1.1) contrast(1.08);
 }
 
 .section-band-muted {
@@ -2439,6 +2526,30 @@ html.section-jump-active .nav-shell {
   }
 }
 
+@keyframes sectionHeadingWake {
+  from {
+    opacity: 0.72;
+    text-shadow: 0 0 0 rgba(255, 95, 210, 0);
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 28px rgba(255, 95, 210, 0.18);
+    transform: translateY(0);
+  }
+}
+
+@keyframes sectionEyebrowWake {
+  from {
+    box-shadow: 0 0 0 rgba(255, 95, 210, 0);
+    transform: translateY(5px);
+  }
+  to {
+    box-shadow: 0 0 24px rgba(255, 95, 210, 0.14);
+    transform: translateY(0);
+  }
+}
+
 @keyframes featuredAccentTrace {
   0%,
   100% {
@@ -2694,7 +2805,7 @@ html.section-jump-active .nav-shell {
   }
 
   .discord-hero {
-    min-height: 86svh;
+    min-height: 100svh;
     padding: 110px 18px 70px;
   }
 
@@ -2788,20 +2899,20 @@ html.section-jump-active .nav-shell {
   }
 
   .discord-hero {
-    min-height: 82svh;
+    min-height: 100svh;
     padding: 96px 14px 62px;
   }
 
   .discord-hero-bg {
     background-position: center;
-    transform: translate3d(var(--discord-bg-x), calc(var(--discord-bg-y) + var(--discord-scroll-y)), 0) scale(1.08);
+    transform: translate3d(var(--discord-bg-x), calc(var(--discord-bg-y) + var(--discord-scroll-y)), 0) scale(1.16);
   }
 
   .discord-hero-ambient {
     background:
       radial-gradient(circle at 50% 28%, rgba(255, 95, 210, 0.08), transparent 18rem),
       linear-gradient(90deg, rgba(4, 1, 8, 0.5), transparent 34%, transparent 70%, rgba(4, 1, 8, 0.5)),
-      linear-gradient(180deg, rgba(5, 2, 7, 0.1), rgba(5, 2, 7, 0.38) 78%, #09040c 100%);
+      linear-gradient(180deg, rgba(5, 2, 7, 0.1), rgba(5, 2, 7, 0.34) 78%, rgba(5, 2, 7, 0.16) 100%);
   }
 
   .discord-hero-grid {
@@ -2967,6 +3078,10 @@ html.section-jump-active .nav-shell {
     clip-path: none !important;
     filter: none !important;
     transform: none !important;
+  }
+
+  html {
+    scroll-snap-type: none !important;
   }
 
   .discord-hero-content,
