@@ -2,7 +2,8 @@ function RoleCard({ index, role, tone }) {
   return (
     <article
       className={`role-card role-card-${tone}`}
-      data-reveal="card"
+      data-cursor-reactive
+      data-reveal={tone === 'past' ? (index % 2 === 0 ? 'left' : 'right') : 'scale'}
       style={{
         '--reveal-delay': `${index * 75}ms`,
         '--role-delay': `${index * 90}ms`,

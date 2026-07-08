@@ -10,7 +10,9 @@ export default function SpecializedSkills({ skills }) {
           {skills.map((skill, index) => (
             <article
               className="specialized-card"
-              data-reveal="card"
+              data-cursor-reactive
+              data-reveal="scale"
+              data-skill-label={skill.label}
               key={skill.title}
               style={{
                 '--reveal-delay': `${index * 75}ms`,

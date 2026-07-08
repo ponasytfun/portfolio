@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import LanyardCard from './LanyardCard'
 
 export default function Contact({ contact }) {
   const [copied, setCopied] = useState(false)
@@ -28,12 +27,6 @@ export default function Contact({ contact }) {
           <h2>{contact.heading}</h2>
           <p>{contact.text}</p>
         </div>
-
-        <LanyardCard
-          config={contact.lanyard}
-          fallbackUsername={contact.discordUsername}
-          profileImage={contact.profileImage}
-        />
 
         <div className="contact-panel contact-actions-panel" data-reveal="card">
           <button

@@ -24,6 +24,15 @@ export const portfolioData = {
     primaryAction: { label: 'Contact Me', href: '#contact' },
     secondaryAction: { label: 'Staff Experience', href: '#staff-experience' },
   },
+  discordHero: {
+    label: 'LIVE DISCORD',
+    scrollLabel: 'Explore Portfolio',
+    scrollTarget: '#portfolio-intro',
+    backgroundImage: {
+      src: assetPath('backgrounds/discord-hero-bg.jpg'),
+      alt: 'Purple sci-fi mountain landscape used as the Discord hero background',
+    },
+  },
   about: {
     heading: 'ABOUT ME',
     text:

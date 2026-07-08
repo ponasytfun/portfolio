@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 export default function Nav({ brandImage, items }) {
   const [activeItem, setActiveItem] = useState(items[0]?.href ?? '#home')
+  const [isScrolled, setIsScrolled] = useState(false)
   const sectionJumpTimer = useRef()
 
   const triggerSectionJump = () => {
@@ -20,6 +21,7 @@ export default function Nav({ brandImage, items }) {
 
     const handleScroll = () => {
       const activationOffset = Math.max(180, window.innerHeight * 0.2)
+      setIsScrolled(window.scrollY > 28)
       const current = sectionIds.findLast((id) => {
         const section = document.getElementById(id)
         return section && section.getBoundingClientRect().top <= activationOffset
@@ -50,7 +52,7 @@ export default function Nav({ brandImage, items }) {
   }, [items])
 
   return (
-    <header className="site-header">
+    <header className={isScrolled ? 'site-header is-scrolled' : 'site-header'}>
       <nav className="nav-shell" aria-label="Primary navigation">
         <a className="brand" href="#home" aria-label="Glitch portfolio home" onClick={triggerSectionJump}>
           <span className="brand-mark">

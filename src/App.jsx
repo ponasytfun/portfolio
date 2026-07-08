@@ -7,16 +7,20 @@ import SpecializedSkills from './components/SpecializedSkills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PortfolioLoader from './components/PortfolioLoader'
+import DiscordHero from './components/DiscordHero'
 import useScrollReveal from './hooks/useScrollReveal'
+import useCursorReactive from './hooks/useCursorReactive'
 
 export default function App() {
   useScrollReveal()
+  useCursorReactive()
 
   return (
     <>
       <PortfolioLoader />
       <Nav brandImage={portfolioData.hero.profileImage} items={portfolioData.navItems} />
       <main>
+        <DiscordHero contact={portfolioData.contact} discordHero={portfolioData.discordHero} />
         <Hero hero={portfolioData.hero} />
         <About about={portfolioData.about} />
         <StaffRoles featuredRoles={portfolioData.featuredRoles} pastRoles={portfolioData.pastRoles} />

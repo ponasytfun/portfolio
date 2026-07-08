@@ -11,6 +11,18 @@ export default function useScrollReveal() {
       return undefined
     }
 
+    targets.forEach((target, index) => {
+      target.dataset.revealType = target.dataset.reveal || 'fade'
+
+      if (target.dataset.delay && !target.style.getPropertyValue('--reveal-delay')) {
+        target.style.setProperty('--reveal-delay', `${target.dataset.delay}ms`)
+      }
+
+      if (!target.style.getPropertyValue('--reveal-order')) {
+        target.style.setProperty('--reveal-order', index)
+      }
+    })
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {

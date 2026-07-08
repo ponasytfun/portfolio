@@ -40,6 +40,7 @@ export default function usePortfolioLoader() {
     let failsafeTimer
     let completed = false
 
+    root.classList.remove('portfolio-loader-complete')
     root.classList.add('portfolio-loader-active')
     body.classList.add('portfolio-loader-lock')
 
@@ -57,6 +58,7 @@ export default function usePortfolioLoader() {
         setIsExiting(true)
         exitTimer = window.setTimeout(() => {
           root.classList.remove('portfolio-loader-active')
+          root.classList.add('portfolio-loader-complete')
           body.classList.remove('portfolio-loader-lock')
           setIsActive(false)
         }, mode === 'reduced' ? 120 : 560)

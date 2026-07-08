@@ -8,6 +8,15 @@ const loaderLabels = [
   { text: 'RENDERING PORTFOLIO', className: 'loader-label loader-label-render' },
 ]
 
+const loaderParticles = Array.from({ length: 26 }, (_, index) => ({
+  delay: `${index * -0.37}s`,
+  duration: `${5.4 + (index % 8) * 0.55}s`,
+  left: `${7 + ((index * 17) % 86)}%`,
+  top: `${8 + ((index * 29) % 82)}%`,
+}))
+
+const phaseDots = ['PROFILE', 'EXP', 'DND', 'UI']
+
 export default function PortfolioLoader() {
   const { isActive, isExiting, mode, phase, progress } = usePortfolioLoader()
 
@@ -31,6 +40,27 @@ export default function PortfolioLoader() {
       <div className="loader-panel loader-panel-right" aria-hidden="true" />
 
       <div className="loader-stage" aria-hidden="true">
+        <div className="loader-field">
+          {loaderParticles.map((particle, index) => (
+            <span
+              key={index}
+              style={{
+                '--loader-particle-delay': particle.delay,
+                '--loader-particle-duration': particle.duration,
+                '--loader-particle-left': particle.left,
+                '--loader-particle-top': particle.top,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="loader-sync-lines">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
+
         <div className="loader-scanline" />
         <div className="loader-crosshair loader-crosshair-top" />
         <div className="loader-crosshair loader-crosshair-bottom" />
@@ -86,6 +116,14 @@ export default function PortfolioLoader() {
         <div className="loader-progress-block">
           <span>{phaseLabel}</span>
           <strong>{progress}%</strong>
+        </div>
+
+        <div className="loader-phase-dots">
+          {phaseDots.map((dot, index) => (
+            <span key={dot} className={index <= Math.floor(progress / 28) ? 'is-lit' : ''}>
+              {dot}
+            </span>
+          ))}
         </div>
       </div>
     </div>
