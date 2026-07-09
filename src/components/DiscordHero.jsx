@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react'
+import { Activity, ArrowDown, Radio } from 'lucide-react'
 import useLanyard from '../hooks/useLanyard'
 import { getActivityDetails, getPresenceView } from '../utils/discordPresence'
+import SocialIcon from './SocialIcon'
 
 const heroParticles = Array.from({ length: 22 }, (_, index) => ({
   delay: `${index * -0.58}s`,
@@ -160,29 +162,33 @@ export default function DiscordHero({ contact, discordHero }) {
       </div>
 
       <div className="discord-hero-content">
-        <div className="discord-live-label">
-          <span className="discord-live-dot" aria-hidden="true" />
-          <span>{discordHero.label}</span>
-        </div>
+        <div className="discord-hero-visual">
+          <div className="discord-live-label">
+            <Radio aria-hidden="true" size={14} />
+            <span>{discordHero.label}</span>
+          </div>
 
-        <div className="discord-avatar-stage">
-          <div className="discord-avatar-orbit" aria-hidden="true">
-            {orbitNodes.map((node) => (
-              <span key={node} style={{ '--node-angle': `${node * 36}deg` }} />
-            ))}
+          <div className="discord-avatar-stage">
+            <div className="discord-avatar-orbit" aria-hidden="true">
+              {orbitNodes.map((node) => (
+                <span key={node} style={{ '--node-angle': `${node * 36}deg` }} />
+              ))}
+            </div>
+            <div className="discord-avatar-frame">
+              <img
+                alt={contact.profileImage.alt}
+                height="188"
+                loading="eager"
+                src={contact.profileImage.src}
+                width="188"
+              />
+              <span className={`lanyard-status-dot lanyard-status-${presenceView.statusClass}`}>
+                <span className="sr-only">{presenceView.statusText}</span>
+              </span>
+            </div>
           </div>
-          <div className="discord-avatar-frame">
-            <img
-              alt={contact.profileImage.alt}
-              height="156"
-              loading="eager"
-              src={contact.profileImage.src}
-              width="156"
-            />
-            <span className={`lanyard-status-dot lanyard-status-${presenceView.statusClass}`}>
-              <span className="sr-only">{presenceView.statusText}</span>
-            </span>
-          </div>
+
+          <p className="discord-signal"><Activity aria-hidden="true" size={14} /> Lanyard signal connected</p>
         </div>
 
         <div className="discord-identity">
@@ -190,10 +196,15 @@ export default function DiscordHero({ contact, discordHero }) {
           <h1>{displayName}</h1>
           <p className="discord-hero-location">{discordHero.location}</p>
           <p className="discord-hero-intro">{discordHero.intro}</p>
-          <p className="discord-hero-status" key={presenceView.statusText} aria-live="polite">
-            {presenceView.statusText}
-          </p>
-          <p className="discord-hero-live-name">Live as {liveDisplayName}</p>
+          <div className="discord-presence-line">
+            <span className={`presence-beacon lanyard-status-${presenceView.statusClass}`} aria-hidden="true" />
+            <span>
+              <small>Live as {liveDisplayName}</small>
+              <strong className="discord-hero-status" key={presenceView.statusText} aria-live="polite">
+                {presenceView.statusText}
+              </strong>
+            </span>
+          </div>
           <div className="discord-social-row" aria-label="Social links">
             {(contact.socials ?? []).map((social) => (
               <a
@@ -203,7 +214,7 @@ export default function DiscordHero({ contact, discordHero }) {
                 rel="noreferrer"
                 target={social.href?.startsWith('http') ? '_blank' : undefined}
               >
-                <span aria-hidden="true">{social.icon}</span>
+                <SocialIcon label={social.label} size={16} />
                 {social.label}
               </a>
             ))}
@@ -222,7 +233,7 @@ export default function DiscordHero({ contact, discordHero }) {
 
       <a className="discord-scroll-cue" href={discordHero.scrollTarget}>
         <span>{discordHero.scrollLabel}</span>
-        <i aria-hidden="true" />
+        <ArrowDown aria-hidden="true" size={15} />
       </a>
     </section>
   )

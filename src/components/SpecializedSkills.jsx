@@ -1,3 +1,16 @@
+import { Braces, CalendarDays, CircleHelp, MessagesSquare, ServerCog, Settings2, ShieldCheck, UsersRound } from 'lucide-react'
+
+const skillIcons = {
+  MOD: ShieldCheck,
+  TEAM: UsersRound,
+  OPS: ServerCog,
+  DISC: MessagesSquare,
+  EVNT: CalendarDays,
+  HELP: CircleHelp,
+  TECH: Braces,
+  CFG: Settings2,
+}
+
 export default function SpecializedSkills({ skills }) {
   return (
     <section className="section-band section-band-muted skills-section" id="skills">
@@ -7,8 +20,10 @@ export default function SpecializedSkills({ skills }) {
           <h2>SPECIALIZED SKILLS</h2>
         </div>
         <div className="specialized-grid">
-          {skills.map((skill, index) => (
-            <article
+          {skills.map((skill, index) => {
+            const SkillIcon = skillIcons[skill.label] ?? Settings2
+
+            return <article
               className="specialized-card"
               data-cursor-reactive
               data-reveal="scale"
@@ -22,12 +37,13 @@ export default function SpecializedSkills({ skills }) {
               }}
             >
               <span className="skill-mark" aria-hidden="true">
-                {skill.label}
+                <SkillIcon size={20} strokeWidth={1.7} />
               </span>
+              <small>{skill.label}</small>
               <h3>{skill.title}</h3>
               <p>{skill.description}</p>
             </article>
-          ))}
+          })}
         </div>
       </div>
     </section>

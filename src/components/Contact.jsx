@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { Check, Copy, ExternalLink } from 'lucide-react'
+import SocialIcon from './SocialIcon'
 
 export default function Contact({ contact }) {
   const [copied, setCopied] = useState(false)
@@ -38,11 +40,12 @@ export default function Contact({ contact }) {
                 rel="noreferrer"
                 target={social.href?.startsWith('http') ? '_blank' : undefined}
               >
-                <span className="social-link-icon" aria-hidden="true">{social.icon}</span>
+                <span className="social-link-icon"><SocialIcon label={social.label} /></span>
                 <span>
                   <strong>{social.label}</strong>
                   <small>{social.handle}</small>
                 </span>
+                {!social.placeholder ? <ExternalLink aria-hidden="true" className="social-link-arrow" size={15} /> : null}
               </a>
             ))}
           </div>
@@ -52,7 +55,7 @@ export default function Contact({ contact }) {
             onClick={copyDiscordUsername}
             type="button"
           >
-            <span className="button-icon" aria-hidden="true">D</span>
+            {copied ? <Check aria-hidden="true" size={17} /> : <Copy aria-hidden="true" size={17} />}
             {copied ? 'Copied username' : contact.discordUsername}
           </button>
         </div>

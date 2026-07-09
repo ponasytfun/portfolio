@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 
 export default function Nav({ brandImage, items }) {
   const [activeItem, setActiveItem] = useState(items[0]?.href ?? '#home')
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const sectionJumpTimer = useRef()
 
   const triggerSectionJump = () => {
+    setIsMenuOpen(false)
     document.documentElement.classList.add('section-jump-active')
     window.clearTimeout(sectionJumpTimer.current)
     sectionJumpTimer.current = window.setTimeout(() => {
@@ -51,8 +54,17 @@ export default function Nav({ brandImage, items }) {
     }
   }, [items])
 
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setIsMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [])
+
   return (
-    <header className={isScrolled ? 'site-header is-scrolled' : 'site-header'}>
+    <header className={`${isScrolled ? 'site-header is-scrolled' : 'site-header'}${isMenuOpen ? ' is-menu-open' : ''}`}>
       <nav className="nav-shell" aria-label="Primary navigation">
         <a className="brand" href="#home" aria-label="Glitch portfolio home" onClick={triggerSectionJump}>
           <span className="brand-mark">
@@ -60,7 +72,17 @@ export default function Nav({ brandImage, items }) {
           </span>
           <span>Glitch</span>
         </a>
-        <div className="nav-links">
+        <button
+          aria-controls="primary-navigation-links"
+          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          className="nav-toggle"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          type="button"
+        >
+          {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </button>
+        <div className={isMenuOpen ? 'nav-links is-open' : 'nav-links'} id="primary-navigation-links">
           {items.map((item) => (
             <a
               className={activeItem === item.href ? 'nav-link is-active' : 'nav-link'}

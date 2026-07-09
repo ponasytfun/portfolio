@@ -3,6 +3,7 @@ const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`
 export const portfolioData = {
   navItems: [
     { label: 'Home', href: '#home' },
+    { label: 'Overview', href: '#portfolio-intro' },
     { label: 'About', href: '#about' },
     { label: 'Current', href: '#staff-experience' },
     { label: 'Past Experience', href: '#past-roles' },
@@ -10,7 +11,7 @@ export const portfolioData = {
     { label: 'Contact Me', href: '#contact' },
   ],
   hero: {
-    badge: 'Staff & Community Portfolio',
+    badge: 'Portfolio / 2026',
     name: 'Glitch',
     title: 'Minecraft Staff, Community Support & Server Operations',
     profileImage: {
@@ -23,6 +24,15 @@ export const portfolioData = {
       'A focused look at the communities I have managed, the staff responsibilities I have handled, and the technical systems I understand when a server needs practical help.',
     primaryAction: { label: 'Contact Me', href: '#contact' },
     secondaryAction: { label: 'Staff Experience', href: '#staff-experience' },
+  },
+  minecraft: {
+    username: 'Glitch',
+    skinUrl: 'https://minotar.net/skin/Glitch',
+    label: 'Minecraft identity',
+    fallbackImage: {
+      src: assetPath('profile/glitch-pfp.png'),
+      alt: 'Glitch profile avatar',
+    },
   },
   discordHero: {
     displayName: 'Glitch',

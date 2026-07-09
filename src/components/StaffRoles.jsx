@@ -1,4 +1,8 @@
+import { Crown, ShieldCheck, Users } from 'lucide-react'
+
 function RoleCard({ index, role, tone }) {
+  const RoleIcon = role.role.includes('Owner') ? Crown : ShieldCheck
+
   return (
     <article
       className={`role-card role-card-${tone}`}
@@ -14,7 +18,7 @@ function RoleCard({ index, role, tone }) {
     >
       <div className="role-card-header">
         <span className="role-icon" aria-hidden="true">
-          {role.icon ?? 'STAFF'}
+          <RoleIcon size={20} strokeWidth={1.7} />
         </span>
         <div>
           <h3>{role.name}</h3>
@@ -27,7 +31,7 @@ function RoleCard({ index, role, tone }) {
           {role.stats.map((stat) => (
             <div key={`${role.name}-${stat.label}`}>
               <dt>{stat.label}</dt>
-              <dd>{stat.value}</dd>
+              <dd>{stat.label === 'Community' ? <Users aria-hidden="true" size={14} /> : null}{stat.value}</dd>
             </div>
           ))}
         </dl>

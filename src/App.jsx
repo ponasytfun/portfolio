@@ -16,18 +16,21 @@ export default function App() {
   useCursorReactive()
 
   return (
-    <>
+    <div
+      className="site-shell"
+      style={{ '--site-background': `url("${portfolioData.discordHero.backgroundImage.src}")` }}
+    >
       <PortfolioLoader />
       <Nav brandImage={portfolioData.hero.profileImage} items={portfolioData.navItems} />
       <main>
         <DiscordHero contact={portfolioData.contact} discordHero={portfolioData.discordHero} />
-        <Hero hero={portfolioData.hero} />
+        <Hero hero={portfolioData.hero} minecraft={portfolioData.minecraft} />
         <About about={portfolioData.about} />
         <StaffRoles featuredRoles={portfolioData.featuredRoles} pastRoles={portfolioData.pastRoles} />
         <SpecializedSkills skills={portfolioData.specializedSkills} />
         <Contact contact={portfolioData.contact} />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
