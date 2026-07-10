@@ -27,8 +27,8 @@ html {
   background: var(--ink-0);
   overflow-x: clip;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--nav-height) + 22px);
-  scroll-snap-type: y proximity;
+  scroll-padding-top: 0;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -400,14 +400,9 @@ body.portfolio-loader-lock {
 
 .loader-phase-dots span.is-lit { color: var(--violet-soft); }
 
-.portfolio-loader-active .site-header,
 .portfolio-loader-active .discord-hero-visual,
 .portfolio-loader-active .discord-identity {
   opacity: 0;
-}
-
-.portfolio-loader-complete .site-header {
-  animation: nav-arrive 700ms 120ms var(--ease-out) both;
 }
 
 .portfolio-loader-complete .discord-hero-visual {
@@ -486,22 +481,25 @@ button:focus-visible {
 }
 
 main {
+  counter-reset: portfolio-section;
   isolation: isolate;
   overflow: clip;
 }
 
-main > section,
-.site-footer {
+main > section {
+  counter-increment: portfolio-section;
   scroll-snap-align: start;
-  scroll-snap-stop: normal;
+  scroll-snap-stop: always;
 }
 
 .section-band {
+  align-items: center;
   background: rgba(7, 6, 11, 0.74);
   border-top: 1px solid rgba(255, 255, 255, 0.055);
-  min-height: auto;
+  display: flex;
+  min-height: 100svh;
   overflow: hidden;
-  padding: 118px 24px;
+  padding: 96px 24px;
   position: relative;
 }
 
@@ -510,12 +508,13 @@ main > section,
   content: '';
   height: 1px;
   left: 50%;
-  opacity: 0;
+  box-shadow: 0 0 18px rgba(157, 108, 255, 0.12);
+  opacity: 0.26;
   position: absolute;
   top: -1px;
-  transform: translateX(-50%) scaleX(0.2);
+  transform: translateX(-50%) scaleX(0.16);
   transition: opacity 700ms ease, transform 1000ms var(--ease-out);
-  width: min(70vw, 760px);
+  width: min(92vw, 1120px);
 }
 
 .section-band.is-section-active::after {
@@ -527,12 +526,48 @@ main > section,
   background: rgba(12, 10, 16, 0.82);
 }
 
+main > .section-band:nth-of-type(3n) {
+  background-image: radial-gradient(circle at 8% 50%, rgba(104, 167, 255, 0.075), transparent 30%);
+}
+
+main > .section-band:nth-of-type(3n + 1) {
+  background-image: radial-gradient(circle at 92% 48%, rgba(239, 111, 195, 0.07), transparent 31%);
+}
+
+main > .section-band:nth-of-type(3n + 2) {
+  background-image: radial-gradient(circle at 50% 100%, rgba(157, 108, 255, 0.075), transparent 34%);
+}
+
 .section-inner {
+  isolation: isolate;
   margin: 0 auto;
   max-width: 1120px;
   position: relative;
   width: 100%;
   z-index: 2;
+}
+
+main > .section-band > .section-inner::before {
+  color: transparent;
+  content: '0' counter(portfolio-section);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(6rem, 13vw, 11rem);
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.42;
+  pointer-events: none;
+  position: absolute;
+  right: -2vw;
+  top: -54px;
+  transform: translate3d(22px, 18px, 0);
+  transition: opacity 900ms ease, transform 1100ms var(--ease-out);
+  -webkit-text-stroke: 1px rgba(196, 167, 255, 0.13);
+  z-index: -1;
+}
+
+main > .section-band.is-section-active > .section-inner::before {
+  opacity: 0.8;
+  transform: translate3d(0, 0, 0);
 }
 
 .eyebrow,
@@ -723,9 +758,23 @@ main > section,
   display: flex;
   min-height: 100svh;
   overflow: hidden;
-  padding: 126px 24px 92px;
+  padding: 72px 24px 82px;
   position: relative;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.discord-hero::after {
+  background: linear-gradient(90deg, transparent, rgba(196, 167, 255, 0.52), transparent);
+  bottom: 0;
+  box-shadow: 0 0 22px rgba(157, 108, 255, 0.2);
+  content: '';
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: min(92vw, 1120px);
+  z-index: 5;
 }
 
 .discord-hero-bg {
@@ -1119,8 +1168,8 @@ main > section,
   background: rgba(7, 6, 11, 0.82);
   display: flex;
   min-height: 100svh;
-  padding-bottom: 110px;
-  padding-top: 130px;
+  padding-bottom: 72px;
+  padding-top: 72px;
 }
 
 .hero-section::before {
@@ -1408,7 +1457,7 @@ main > section,
 
 /* About */
 .about-section {
-  min-height: 84svh;
+  min-height: 100svh;
 }
 
 .about-layout {
@@ -1473,7 +1522,7 @@ main > section,
 
 /* Role cards */
 .roles-section {
-  min-height: auto;
+  min-height: 100svh;
 }
 
 .featured-role-grid,
@@ -1637,6 +1686,11 @@ main > section,
 .role-stats dd svg { color: var(--violet-soft); flex: 0 0 auto; }
 
 /* Skills */
+.skills-section {
+  padding-bottom: 72px;
+  padding-top: 72px;
+}
+
 .specialized-grid {
   border-left: 1px solid var(--line);
   border-top: 1px solid var(--line);
@@ -1651,9 +1705,9 @@ main > section,
   border: 0;
   border-bottom: 1px solid var(--line);
   border-right: 1px solid var(--line);
-  min-height: 248px;
+  min-height: 215px;
   overflow: hidden;
-  padding: 27px;
+  padding: 18px;
   position: relative;
   transition: background 300ms ease, transform 350ms var(--ease-out);
 }
@@ -1696,7 +1750,7 @@ main > section,
   display: flex;
   height: 43px;
   justify-content: center;
-  margin-bottom: 38px;
+  margin-bottom: 24px;
   position: relative;
   transition: background 250ms ease, color 250ms ease, transform 350ms var(--ease-out);
   width: 43px;
@@ -1714,22 +1768,22 @@ main > section,
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   position: absolute;
-  right: 24px;
-  top: 30px;
+  right: 18px;
+  top: 21px;
 }
 
 .specialized-card h3 {
   color: var(--paper);
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   line-height: 1.35;
-  margin: 0 0 11px;
+  margin: 0 0 8px;
   position: relative;
 }
 
 .specialized-card p {
   color: var(--paper-dim);
-  font-size: 0.78rem;
-  line-height: 1.65;
+  font-size: 0.72rem;
+  line-height: 1.5;
   margin: 0;
   position: relative;
 }
@@ -1738,7 +1792,7 @@ main > section,
 .contact-section {
   align-items: center;
   display: flex;
-  min-height: 80svh;
+  min-height: 100svh;
 }
 
 .contact-heading {
@@ -1762,7 +1816,7 @@ main > section,
 .social-link-grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 22px;
 }
 
@@ -1961,10 +2015,16 @@ main > section,
 
 @media (max-width: 760px) {
   :root { --nav-height: 58px; }
-  html { scroll-snap-type: y proximity; }
+  html { scroll-snap-type: y mandatory; }
   .section-band { padding: 88px 20px; }
   .section-heading { margin-bottom: 40px; }
   .section-heading h2 { font-size: clamp(2rem, 11vw, 3.4rem); }
+
+  main > .section-band > .section-inner::before {
+    font-size: clamp(5.5rem, 28vw, 8rem);
+    right: -8px;
+    top: -38px;
+  }
 
   .loader-stage { height: 100svh; width: 100vw; }
   .loader-core-shell { height: 250px; width: 250px; }
@@ -1978,7 +2038,7 @@ main > section,
 
   .discord-hero {
     min-height: 100svh;
-    padding: 96px 20px 64px;
+    padding: 52px 20px 64px;
   }
   .discord-hero-bg { background-position: 50% 50%; }
   .discord-hero::before {
@@ -2005,7 +2065,7 @@ main > section,
   .discord-scroll-cue { bottom: 13px; }
   .discord-scroll-cue span { display: none; }
 
-  .hero-section { min-height: auto; padding-bottom: 96px; padding-top: 104px; }
+  .hero-section { min-height: 100svh; padding-bottom: 96px; padding-top: 104px; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-name > span { font-size: clamp(4.2rem, 23vw, 7rem); }
   .hero-name > small { font-size: clamp(1.7rem, 8vw, 2.5rem); }

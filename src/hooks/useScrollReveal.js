@@ -4,7 +4,7 @@ export default function useScrollReveal() {
   useEffect(() => {
     const root = document.documentElement
     const targets = Array.from(document.querySelectorAll('[data-reveal]'))
-    const sections = Array.from(document.querySelectorAll('main > section, .site-footer'))
+    const sections = Array.from(document.querySelectorAll('main > section'))
 
     root.classList.add('reveal-ready')
 

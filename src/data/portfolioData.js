@@ -1,15 +1,6 @@
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`
 
 export const portfolioData = {
-  navItems: [
-    { label: 'Home', href: '#home' },
-    { label: 'Overview', href: '#portfolio-intro' },
-    { label: 'About', href: '#about' },
-    { label: 'Current', href: '#staff-experience' },
-    { label: 'Past Experience', href: '#past-roles' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact Me', href: '#contact' },
-  ],
   hero: {
     badge: 'Portfolio / 2026',
     name: 'Glitch',
@@ -26,8 +17,8 @@ export const portfolioData = {
     secondaryAction: { label: 'Staff Experience', href: '#staff-experience' },
   },
   minecraft: {
-    username: 'Glitch',
-    skinUrl: 'https://minotar.net/skin/Glitch',
+    username: 'Glitch_xz',
+    skinUrl: 'https://minotar.net/skin/Glitch_xz',
     label: 'Minecraft identity',
     fallbackImage: {
       src: assetPath('profile/glitch-pfp.png'),
@@ -190,18 +181,10 @@ export const portfolioData = {
         icon: 'D',
       },
       {
-        label: 'TikTok',
-        handle: 'Add your TikTok link',
-        href: '#contact',
-        icon: 'T',
-        placeholder: true,
-      },
-      {
         label: 'YouTube',
-        handle: 'Add your YouTube link',
-        href: '#contact',
+        handle: '@not_famous14',
+        href: 'https://www.youtube.com/@not_famous14',
         icon: 'Y',
-        placeholder: true,
       },
     ],
     profileImage: {

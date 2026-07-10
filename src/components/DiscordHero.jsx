@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef } from 'react'
-import { Activity, ArrowDown, Radio } from 'lucide-react'
+import { ArrowDown, Radio } from 'lucide-react'
 import useLanyard from '../hooks/useLanyard'
 import { getActivityDetails, getPresenceView } from '../utils/discordPresence'
 import SocialIcon from './SocialIcon'
@@ -187,8 +187,6 @@ export default function DiscordHero({ contact, discordHero }) {
               </span>
             </div>
           </div>
-
-          <p className="discord-signal"><Activity aria-hidden="true" size={14} /> Lanyard signal connected</p>
         </div>
 
         <div className="discord-identity">

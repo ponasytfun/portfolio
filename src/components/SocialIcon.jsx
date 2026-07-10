@@ -1,8 +1,7 @@
-import { MessageCircle, Music2, Play } from 'lucide-react'
+import { MessageCircle, Play } from 'lucide-react'
 
 const icons = {
   Discord: MessageCircle,
-  TikTok: Music2,
   YouTube: Play,
 }
 
