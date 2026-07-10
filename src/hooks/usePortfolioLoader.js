@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
 
-const LOADER_SESSION_KEY = 'glitch-portfolio-loader-seen'
-
 const getInitialMode = () => {
   if (typeof window === 'undefined') {
     return 'full'
@@ -12,11 +10,10 @@ const getInitialMode = () => {
     return 'reduced'
   }
 
-  return window.sessionStorage.getItem(LOADER_SESSION_KEY) === 'true' ? 'compact' : 'full'
+  return 'full'
 }
 
 const modeDurations = {
-  compact: 720,
   full: 2600,
   reduced: 260,
 }
@@ -52,7 +49,6 @@ export default function usePortfolioLoader() {
       completed = true
       setProgress(100)
       setPhase('ready')
-      window.sessionStorage.setItem(LOADER_SESSION_KEY, 'true')
 
       readyTimer = window.setTimeout(() => {
         setIsExiting(true)
