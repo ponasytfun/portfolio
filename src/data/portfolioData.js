@@ -2,19 +2,19 @@ const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`
 
 export const portfolioData = {
   hero: {
-    badge: 'Portfolio / 2026',
+    badge: 'Glitch / Portfolio 2026',
     name: 'Glitch',
-    title: 'Minecraft Staff, Community Support & Server Operations',
+    title: 'Minecraft Developer & Community Manager',
     profileImage: {
       src: assetPath('profile/glitch-pfp-round.png'),
       alt: 'Glitch profile avatar',
     },
     subtitle:
-      'Manager at Shield Development with experience in Minecraft server leadership, community operations, staff coordination, and technical systems.',
+      'I build Minecraft systems, organize staff teams, and keep online communities running without turning every problem into a meeting.',
     support:
-      'A focused look at the communities I have managed, the staff responsibilities I have handled, and the technical systems I understand when a server needs practical help.',
+      'Java and Paper development, Discord operations, moderation systems, events, and practical server leadership.',
     primaryAction: { label: 'Contact Me', href: '#contact' },
-    secondaryAction: { label: 'Staff Experience', href: '#staff-experience' },
+    secondaryAction: { label: 'View Experience', href: '#past-roles' },
   },
   minecraft: {
     username: 'Glitch_xz',
@@ -28,10 +28,10 @@ export const portfolioData = {
   discordHero: {
     displayName: 'Glitch',
     label: 'LIVE DISCORD',
-    kicker: 'Minecraft Staff & Community Manager',
-    location: 'Discord & Minecraft communities',
+    kicker: 'Minecraft Developer & Community Manager',
+    location: 'Minecraft servers / Discord communities',
     intro:
-      'I manage communities, coordinate staff teams, support players, and keep server operations clean, calm, and organized.',
+      'I build the systems behind the server, help teams make clear decisions, and keep the player experience from becoming an afterthought.',
     scrollLabel: 'Explore Portfolio',
     scrollTarget: '#portfolio-intro',
     backgroundImage: {
@@ -41,137 +41,111 @@ export const portfolioData = {
   },
   about: {
     heading: 'ABOUT ME',
+    lead: 'I work where server development and community operations overlap.',
     text:
-      "Hi, I'm Glitch. I currently work as a Manager at Shield Development, a 650+ member community. I also have past experience helping Minecraft communities through ownership, management, moderation, community operations, server organization, player support, and technical support when needed. I previously supported Prism SMP, Unstable SMP, Vortex SMP, Primal SMP, Anchor SMP, and Reality SMP, with a focus on keeping communities fair, active, organized, and clear for players.",
+      "That means writing and configuring Minecraft systems, structuring Discord servers, coordinating staff, handling player issues, and planning events. I care about clear rules, useful tools, and communities that feel organized without feeling corporate.",
     stats: [
-      { value: '650+', label: 'Current Community' },
-      { value: '12K+', label: 'Combined Community Size' },
-      { value: 'Manager', label: 'Current Role' },
+      { value: '6+', label: 'Servers Worked With' },
+      { value: '3+', label: 'Years Experience' },
+      { value: '1.21+', label: 'Minecraft Development' },
     ],
+    principles: ['Clear staff structure', 'Player-first decisions', 'Systems that stay maintainable'],
   },
-  featuredRoles: [
-    {
-      name: 'Shield Development',
-      role: 'Current Manager',
-      description:
-        'Managing Shield Development with a focus on staff coordination, member support, internal organization, and reliable community workflows.',
-      icon: '650+',
-      stats: [
-        { label: 'Community', value: '650+ members' },
-        { label: 'Focus', value: 'Management' },
-      ],
-    },
-  ],
+  availability: {
+    eyebrow: 'Current status',
+    heading: 'NO ACTIVE STAFF ROLE',
+    shortLabel: 'No active role',
+    title: 'Independent right now',
+    text:
+      "I'm not currently staff on a server. I'm available to talk about the right Minecraft development, operations, or community role.",
+    action: { label: 'Start a conversation', href: '#contact' },
+  },
   pastRoles: [
     {
       name: 'Vortex SMP',
       role: 'Former Owner',
       description:
-        'Owned Vortex SMP and handled high-level direction, community standards, staff decisions, and the server expectations players followed.',
-      stats: [
-        { label: 'Community', value: '2K+ members' },
-        { label: 'Focus', value: 'Ownership' },
-      ],
-    },
-    {
-      name: 'Prism SMP',
-      role: 'Former Co-Owner',
-      description:
-        'Co-led Prism SMP with a focus on staff communication, player-facing updates, server organization, and practical technical coordination.',
-      stats: [
-        { label: 'Community', value: '1K+ members' },
-        { label: 'Focus', value: 'Leadership & ops' },
-      ],
-    },
-    {
-      name: 'Unstable SMP',
-      role: 'Former Manager',
-      description:
-        'Managed day-to-day staff work in a larger SMP environment, including moderation workflows, events, player escalations, and operational follow-through.',
-      stats: [
-        { label: 'Community', value: '6K+ members' },
-        { label: 'Focus', value: 'Staff coordination' },
-      ],
+        'Led the server direction, staff decisions, community standards, and the day-to-day player experience.',
+      focus: ['Ownership', 'Staff leadership', 'Server direction'],
     },
     {
       name: 'Primal SMP',
-      role: 'Former Manager',
+      role: 'Former Developer / Co-Owner',
       description:
-        'Managed Primal SMP by keeping moderation expectations clear, organizing staff work, and helping maintain player activity and server order.',
-      stats: [
-        { label: 'Community', value: '500+ members' },
-        { label: 'Focus', value: 'Management' },
-      ],
+        'Combined development work with co-ownership, supporting server systems, technical decisions, staff organization, and operations.',
+      focus: ['Development', 'Co-ownership', 'Operations'],
     },
     {
       name: 'Anchor SMP',
-      role: 'Former Manager',
+      role: 'Former Owner',
       description:
-        'Coordinated Anchor SMP staff communication, internal organization, player-facing support, and the moderation flow around routine issues.',
-      stats: [
-        { label: 'Community', value: '2K+ members' },
-        { label: 'Focus', value: 'Staff management' },
-      ],
+        'Owned the server and handled leadership, team organization, player communication, and operational priorities.',
+      focus: ['Ownership', 'Team organization', 'Player support'],
     },
     {
       name: 'Reality SMP',
-      role: 'Former Staff Member',
+      role: 'Former Owner',
       description:
-        'Handled Reality SMP staff duties around reports, rule enforcement, moderation consistency, and direct player support.',
-      stats: [
-        { label: 'Community', value: '700+ members' },
-        { label: 'Focus', value: 'Staff support' },
-      ],
+        'Owned Reality SMP and managed the standards, moderation direction, staff responsibilities, and community communication.',
+      focus: ['Ownership', 'Moderation direction', 'Community standards'],
     },
   ],
+  skillsIntro: {
+    eyebrow: 'Capabilities',
+    heading: 'SPECIALIZED SKILLS',
+    text:
+      'The useful work behind a stable server: the code, configuration, staff systems, and community decisions players usually only notice when they go wrong.',
+  },
   specializedSkills: [
     {
-      title: 'Community Moderation',
-      description: 'Rule enforcement, conflict handling, player reports, and fair staff decisions.',
-      label: 'MOD',
-    },
-    {
-      title: 'Staff Communication',
-      description: 'Coordinating with staff teams, sharing context, and keeping decisions clear.',
+      title: 'Staff Leadership',
+      description: 'Team structure, staff expectations, training, escalation paths, and consistent decisions.',
       label: 'TEAM',
     },
     {
-      title: 'Server Operations',
-      description: 'Ranks, permissions, server organization, event support, and routine checks.',
-      label: 'OPS',
-    },
-    {
       title: 'Discord Operations',
-      description:
-        'Role architecture, moderation workflows, staff channels, announcements, verification systems, bot integrations, and community structure.',
+      description: 'Roles, permissions, tickets, moderation workflows, announcements, and bot integrations.',
       label: 'DISC',
     },
     {
-      title: 'Event Support',
-      description: 'Helping plan, run, and support Minecraft community events.',
-      label: 'EVNT',
-    },
-    {
-      title: 'Player Support',
-      description: 'Answering questions, handling issues, and helping players understand expectations.',
-      label: 'HELP',
-    },
-    {
-      title: 'Minecraft Plugin & Backend Development',
-      description:
-        'Java, Paper API, custom gameplay systems, server integrations, webhooks, configuration design, debugging, and operational tooling.',
+      title: 'Plugin Development',
+      description: 'Java and Paper systems, custom mechanics, server tools, debugging, and integrations.',
       label: 'TECH',
     },
     {
-      title: 'Server Tooling & Integrations',
-      description:
-        'Persistent player data, GUI systems, Discord integrations, staff panels, Vercel-based tools, authenticated plugin webhooks, and backend APIs.',
-      label: 'CFG',
+      title: 'Server Architecture',
+      description: 'Permissions, ranks, network structure, operational workflows, and maintainable setups.',
+      label: 'ARCH',
+    },
+    {
+      title: 'Automation & Bots',
+      description: 'Welcome flows, moderation automation, tickets, webhooks, and reliable bot configuration.',
+      label: 'BOT',
+    },
+    {
+      title: 'Community Building',
+      description: 'Engagement, feedback loops, player communication, events, and long-term retention.',
+      label: 'GROW',
+    },
+    {
+      title: 'Minecraft Server Ops',
+      description: 'Survival, event, and network operations with practical monitoring and support.',
+      label: 'OPS',
+    },
+    {
+      title: 'Plugin Configuration',
+      description: 'Clean YAML setups for LuckPerms, TAB, WorldGuard, EssentialsX, and related tooling.',
+      label: 'YAML',
+    },
+    {
+      title: 'Event Coordination',
+      description: 'Planning, staffing, live logistics, player communication, and post-event follow-through.',
+      label: 'EVNT',
     },
   ],
   contact: {
-    heading: 'REACH OUT ON DISCORD',
-    text: 'Reach out for Minecraft staff work, community management, server operations, technical systems, moderation workflows, or questions about past server experience.',
+    heading: 'START A CONVERSATION',
+    text: 'For Minecraft development, server operations, staff leadership, or community work, Discord is the quickest way to reach me.',
     discordUsername: 'mr. zap',
     socials: [
       {
