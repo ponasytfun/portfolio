@@ -10,7 +10,7 @@ export const portfolioData = {
       alt: 'Glitch profile avatar',
     },
     subtitle:
-      'I build Minecraft systems, organize staff teams, and keep online communities running without turning every problem into a meeting.',
+      'Manager at Shield Development, working across Minecraft systems, staff teams, and community operations.',
     support:
       'Java and Paper development, Discord operations, moderation systems, events, and practical server leadership.',
     primaryAction: { label: 'Contact Me', href: '#contact' },
@@ -41,24 +41,25 @@ export const portfolioData = {
   },
   about: {
     heading: 'ABOUT ME',
-    lead: 'I work where server development and community operations overlap.',
+    lead: 'I currently work as a Manager at Shield Development, where server development and community operations overlap.',
     text:
       "That means writing and configuring Minecraft systems, structuring Discord servers, coordinating staff, handling player issues, and planning events. I care about clear rules, useful tools, and communities that feel organized without feeling corporate.",
     stats: [
-      { value: '6+', label: 'Servers Worked With' },
+      { value: '650+', label: 'Current Community' },
       { value: '3+', label: 'Years Experience' },
       { value: '1.21+', label: 'Minecraft Development' },
     ],
     principles: ['Clear staff structure', 'Player-first decisions', 'Systems that stay maintainable'],
   },
-  availability: {
-    eyebrow: 'Current status',
-    heading: 'NO ACTIVE STAFF ROLE',
-    shortLabel: 'No active role',
-    title: 'Independent right now',
-    text:
-      "I'm not currently staff on a server. I'm available to talk about the right Minecraft development, operations, or community role.",
-    action: { label: 'Start a conversation', href: '#contact' },
+  currentRole: {
+    name: 'Shield Development',
+    role: 'Current Manager',
+    description:
+      'Managing Shield Development with a focus on staff coordination, member support, internal organization, and reliable community workflows.',
+    stats: [
+      { label: 'Community', value: '650+ members' },
+      { label: 'Focus', value: 'Management' },
+    ],
   },
   pastRoles: [
     {

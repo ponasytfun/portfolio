@@ -1,7 +1,11 @@
-import { ArrowUpRight, Code2, Crown, Radio } from 'lucide-react'
+import { Code2, Crown, ShieldCheck, Users } from 'lucide-react'
 
 function RoleCard({ index, role, tone }) {
-  const RoleIcon = role.role.includes('Developer') ? Code2 : Crown
+  const RoleIcon = role.role.includes('Developer')
+    ? Code2
+    : role.role.includes('Owner')
+      ? Crown
+      : ShieldCheck
 
   return (
     <article
@@ -26,37 +30,41 @@ function RoleCard({ index, role, tone }) {
         </div>
       </div>
       <p className="role-description">{role.description}</p>
-      <ul className="role-focus" aria-label={`${role.name} focus areas`}>
-        {role.focus.map((item) => <li key={item}>{item}</li>)}
-      </ul>
+      {role.focus ? (
+        <ul className="role-focus" aria-label={`${role.name} focus areas`}>
+          {role.focus.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      ) : null}
+      {role.stats ? (
+        <dl className="role-stats">
+          {role.stats.map((stat) => (
+            <div key={`${role.name}-${stat.label}`}>
+              <dt>{stat.label}</dt>
+              <dd>{stat.label === 'Community' ? <Users aria-hidden="true" size={14} /> : null}{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
     </article>
   )
 }
 
-export default function StaffRoles({ availability, pastRoles }) {
+export default function StaffRoles({ currentRole, pastRoles }) {
   return (
     <>
-      <section className="section-band availability-section" id="staff-experience">
+      <section className="section-band section-band-muted roles-section" id="staff-experience">
         <div className="section-inner">
           <div className="section-heading section-heading-centered" data-reveal="slide">
-            <p className="eyebrow">{availability.eyebrow}</p>
-            <h2>{availability.heading}</h2>
+            <p className="eyebrow">Current role</p>
+            <h2>CURRENT EXPERIENCE</h2>
           </div>
-          <article className="role-card role-card-featured availability-panel" data-reveal="scale">
-            <div className="availability-signal">
-              <Radio aria-hidden="true" size={17} />
-              <span>Status / independent</span>
-            </div>
-            <h3>{availability.title}</h3>
-            <p>{availability.text}</p>
-            <a className="text-link" href={availability.action.href}>
-              {availability.action.label}<ArrowUpRight aria-hidden="true" size={16} />
-            </a>
-          </article>
+          <div className="featured-role-grid featured-role-grid-single">
+            <RoleCard index={0} role={currentRole} tone="featured" />
+          </div>
         </div>
       </section>
 
-      <section className="section-band section-band-muted roles-section" id="past-roles">
+      <section className="section-band roles-section" id="past-roles">
         <div className="section-inner">
           <div className="section-heading section-heading-centered" data-reveal="slide">
             <p className="eyebrow">Selected history</p>
