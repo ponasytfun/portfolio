@@ -11,14 +11,32 @@ export default function Contact({ contact }) {
   }, [])
 
   const copyDiscordUsername = async () => {
+    let didCopy = false
+
     try {
-      await navigator.clipboard.writeText(contact.discordUsername)
-      setCopied(true)
-      window.clearTimeout(copyTimer.current)
-      copyTimer.current = window.setTimeout(() => setCopied(false), 1800)
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(contact.discordUsername)
+        didCopy = true
+      }
     } catch {
-      setCopied(false)
+      didCopy = false
     }
+
+    if (!didCopy) {
+      const fallbackInput = document.createElement('textarea')
+      fallbackInput.value = contact.discordUsername
+      fallbackInput.setAttribute('readonly', '')
+      fallbackInput.style.position = 'fixed'
+      fallbackInput.style.opacity = '0'
+      document.body.appendChild(fallbackInput)
+      fallbackInput.select()
+      didCopy = document.execCommand('copy')
+      fallbackInput.remove()
+    }
+
+    setCopied(didCopy)
+    window.clearTimeout(copyTimer.current)
+    if (didCopy) copyTimer.current = window.setTimeout(() => setCopied(false), 1800)
   }
 
   return (

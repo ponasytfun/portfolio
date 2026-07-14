@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Check } from 'lucide-react'
 
 function AnimatedStatValue({ value }) {
   const ref = useRef(null)
@@ -82,7 +83,13 @@ export default function About({ about }) {
         <div className="section-heading" data-reveal="left">
           <p className="eyebrow">Profile</p>
           <h2>{about.heading}</h2>
-          <p>{about.text}</p>
+          <p className="about-lead">{about.lead}</p>
+          <p className="about-copy">{about.text}</p>
+          <ul className="about-principles" aria-label="Working principles">
+            {about.principles.map((principle) => (
+              <li key={principle}><Check aria-hidden="true" size={15} />{principle}</li>
+            ))}
+          </ul>
         </div>
 
         <div className="stats-grid" aria-label="Portfolio stats">

@@ -25,8 +25,8 @@ export default function App() {
         <DiscordHero contact={portfolioData.contact} discordHero={portfolioData.discordHero} />
         <Hero hero={portfolioData.hero} minecraft={portfolioData.minecraft} />
         <About about={portfolioData.about} />
-        <StaffRoles featuredRoles={portfolioData.featuredRoles} pastRoles={portfolioData.pastRoles} />
-        <SpecializedSkills skills={portfolioData.specializedSkills} />
+        <StaffRoles availability={portfolioData.availability} pastRoles={portfolioData.pastRoles} />
+        <SpecializedSkills intro={portfolioData.skillsIntro} skills={portfolioData.specializedSkills} />
         <Contact contact={portfolioData.contact} />
       </main>
     </div>
