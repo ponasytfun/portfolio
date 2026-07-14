@@ -2209,87 +2209,6 @@ main > .section-band.is-section-active > .section-inner::before {
   flex: 0 0 auto;
 }
 
-.availability-section {
-  background-image:
-    linear-gradient(115deg, rgba(157, 108, 255, 0.08), transparent 34%),
-    linear-gradient(295deg, rgba(239, 111, 195, 0.05), transparent 36%);
-}
-
-.availability-panel {
-  align-items: center;
-  grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.22fr);
-  grid-template-rows: auto auto;
-  margin: 0 auto;
-  max-width: 980px;
-}
-
-.availability-panel .availability-signal {
-  align-items: center;
-  color: var(--amber);
-  display: inline-flex;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.62rem;
-  font-weight: 720;
-  gap: 9px;
-  grid-column: 1;
-  grid-row: 1;
-  text-transform: uppercase;
-}
-
-.availability-panel .availability-signal svg {
-  filter: drop-shadow(0 0 8px rgba(247, 186, 91, 0.55));
-}
-
-.availability-panel h3 {
-  color: var(--paper);
-  font-size: clamp(1.7rem, 3vw, 2.7rem);
-  grid-column: 1;
-  grid-row: 2;
-  line-height: 1.08;
-  margin: 14px 0 0;
-}
-
-.availability-panel > p {
-  color: var(--paper-muted);
-  font-size: 1rem;
-  grid-column: 2;
-  grid-row: 1;
-  line-height: 1.78;
-  margin: 0;
-  max-width: 560px;
-}
-
-.availability-panel .text-link {
-  align-items: center;
-  color: var(--violet-soft);
-  display: inline-flex;
-  font-size: 0.76rem;
-  font-weight: 760;
-  gap: 8px;
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: start;
-  margin-top: 18px;
-  position: relative;
-}
-
-.availability-panel .text-link::after {
-  background: currentColor;
-  bottom: -5px;
-  content: '';
-  height: 1px;
-  left: 0;
-  position: absolute;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 280ms var(--ease-out);
-  width: 100%;
-}
-
-.availability-panel .text-link:hover::after {
-  transform: scaleX(1);
-}
-
 .role-card-past {
   display: flex;
   flex-direction: column;
@@ -2380,26 +2299,6 @@ main > .section-band.is-section-active > .section-inner::before {
     animation-duration: 720ms;
   }
 
-  .availability-panel {
-    display: grid;
-    gap: 18px;
-    grid-template-columns: 1fr;
-    padding: 32px;
-  }
-
-  .availability-panel .availability-signal,
-  .availability-panel h3,
-  .availability-panel > p,
-  .availability-panel .text-link {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .availability-panel h3,
-  .availability-panel .text-link {
-    margin-top: 0;
-  }
-
   .role-card-past {
     min-height: 0;
   }
@@ -2409,10 +2308,6 @@ main > .section-band.is-section-active > .section-inner::before {
   .about-principles {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .availability-panel {
-    padding: 24px;
   }
 
   .specialized-grid {
